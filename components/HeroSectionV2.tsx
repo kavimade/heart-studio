@@ -37,7 +37,7 @@ export function HeroSectionV2() {
   }, [])
 
   return (
-    <section id="home" className="relative h-screen min-h-[600px] overflow-hidden">
+    <section id="home" className="relative h-[84svh] md:h-screen overflow-hidden">
       {/* Slides */}
       {SLIDES.map((slide, i) => (
         <div

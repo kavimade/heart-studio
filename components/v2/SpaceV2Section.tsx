@@ -21,7 +21,7 @@ const ACCORDION = [
   {
     title: "Location",
     body: "36 Nai Nam 8, Hai Chau, Da Nang.",
-    link: { label: "Get Directions →", href: "https://maps.google.com/?q=36+Nai+Nam+8+Hai+Chau+Da+Nang" },
+    link: { label: "Get Directions →", href: "https://maps.app.goo.gl/262E4hjNeNseDdKGA" },
   },
   {
     title: "Cancellation",
@@ -46,7 +46,7 @@ export function SpaceV2Section() {
       <div className="grid md:grid-cols-2 min-h-[600px] md:min-h-[750px]">
 
         {/* Left — text, vertically centered */}
-        <FadeIn className="flex flex-col justify-center px-8 md:px-14 lg:px-20 py-20 md:py-28 bg-hs-bg">
+        <FadeIn className="order-2 md:order-1 flex flex-col justify-center px-8 md:px-14 lg:px-20 py-20 md:py-28 bg-hs-bg">
           <p className="text-hs-text-muted text-xs uppercase tracking-widest mb-4">Our Space</p>
           <h2 className="text-hs-text mb-6">
             Welcome to{" "}
@@ -95,52 +95,54 @@ export function SpaceV2Section() {
           </div>
         </FadeIn>
 
-        {/* Right — full-bleed image slider */}
-        <div className="relative h-[400px] md:h-auto group">
-          {SPACE_SLIDES.map((s, i) => (
-            <div
-              key={s.src}
-              className="hero-slide absolute inset-0"
-              style={{ opacity: i === slide ? 1 : 0 }}
-              aria-hidden={i !== slide}
-            >
-              <Image
-                src={s.src}
-                alt={s.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority={i === 0}
-              />
-            </div>
-          ))}
-
-          <button
-            onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-hs-white/70 hover:bg-hs-white backdrop-blur-sm rounded-full w-9 h-9 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
-            aria-label="Previous image"
-          >
-            <ChevronLeft size={16} className="text-hs-text" />
-          </button>
-          <button
-            onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-hs-white/70 hover:bg-hs-white backdrop-blur-sm rounded-full w-9 h-9 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
-            aria-label="Next image"
-          >
-            <ChevronRight size={16} className="text-hs-text" />
-          </button>
-
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
-            {SPACE_SLIDES.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setSlide(i)}
-                aria-label={`Go to image ${i + 1}`}
-                className={`rounded-full transition-all duration-300 ${
-                  i === slide ? "w-4 h-1.5 bg-hs-white" : "w-1.5 h-1.5 bg-hs-white/50"
-                }`}
-              />
+        {/* Right — contained image slider with rounded corners */}
+        <div className="order-1 md:order-2 bg-hs-bg flex items-center justify-center px-6 md:px-10 py-10 md:py-16">
+          <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden group shadow-sm">
+            {SPACE_SLIDES.map((s, i) => (
+              <div
+                key={s.src}
+                className="hero-slide absolute inset-0"
+                style={{ opacity: i === slide ? 1 : 0 }}
+                aria-hidden={i !== slide}
+              >
+                <Image
+                  src={s.src}
+                  alt={s.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority={i === 0}
+                />
+              </div>
             ))}
+
+            <button
+              onClick={prev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-hs-white/70 hover:bg-hs-white backdrop-blur-sm rounded-full w-9 h-9 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={16} className="text-hs-text" />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-hs-white/70 hover:bg-hs-white backdrop-blur-sm rounded-full w-9 h-9 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+              aria-label="Next image"
+            >
+              <ChevronRight size={16} className="text-hs-text" />
+            </button>
+
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-1.5">
+              {SPACE_SLIDES.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSlide(i)}
+                  aria-label={`Go to image ${i + 1}`}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === slide ? "w-4 h-1.5 bg-hs-white" : "w-1.5 h-1.5 bg-hs-white/50"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 

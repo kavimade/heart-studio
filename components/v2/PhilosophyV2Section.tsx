@@ -6,7 +6,21 @@ export function PhilosophyV2Section() {
     <section className="bg-hs-bg overflow-hidden">
       <div className="grid md:grid-cols-2 min-h-[600px] md:min-h-[750px]">
 
-        {/* Left — text, vertically centered */}
+        {/* Image — first in DOM: left on desktop, above text on mobile */}
+        {/* Replace src with an actual photo of Chan when available */}
+        <div className="bg-hs-bg flex items-center justify-center px-6 md:px-10 py-10 md:py-16">
+          <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-sm">
+            <Image
+              src="/images/retreat-04.webp"
+              alt="Chan — yoga teacher and founder of Heart Studio, Da Nang"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+        </div>
+
+        {/* Text — second in DOM: right on desktop, below image on mobile */}
         <FadeIn className="flex flex-col justify-center px-8 md:px-14 lg:px-20 py-20 md:py-28 bg-hs-bg">
           <h2 className="text-hs-text mb-6">
             A space of —{" "}
@@ -32,18 +46,6 @@ export function PhilosophyV2Section() {
             </a>
           </div>
         </FadeIn>
-
-        {/* Right — full-bleed photo of Chan */}
-        {/* Replace /images/retreat-04.webp with an actual headshot of Chan when available */}
-        <div className="relative h-[400px] md:h-auto">
-          <Image
-            src="/images/retreat-04.webp"
-            alt="Chan — yoga teacher and founder of Heart Studio, Da Nang"
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
 
       </div>
     </section>

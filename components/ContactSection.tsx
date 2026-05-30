@@ -30,7 +30,7 @@ export function ContactSection() {
           <div className="text-hs-white/75 text-sm md:text-base">
             <p className="mb-2">📍 36 Nai Nam 8, Hai Chau, Da Nang</p>
             <a
-              href="https://maps.google.com/?q=36+Nai+Nam+8+Hai+Chau+Da+Nang"
+              href="https://maps.app.goo.gl/262E4hjNeNseDdKGA"
               target="_blank"
               rel="noopener noreferrer"
               className="text-hs-white/90 underline underline-offset-4 hover:text-hs-white transition-colors text-sm"

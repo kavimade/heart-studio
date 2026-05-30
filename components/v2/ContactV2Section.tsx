@@ -29,7 +29,7 @@ export function ContactV2Section() {
                   Vietnam
                 </p>
                 <a
-                  href="https://maps.google.com/?q=36+Nai+Nam+8+Hai+Chau+Da+Nang"
+                  href="https://maps.app.goo.gl/262E4hjNeNseDdKGA"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-hs-text-muted text-xs underline underline-offset-4 hover:text-hs-olive transition-colors mt-2 inline-block"

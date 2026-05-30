@@ -82,7 +82,7 @@ export function ClassesV2Section() {
             <FadeIn key={cls.name} delay={i * 0.08}>
             <div
               className="rounded-3xl relative overflow-hidden flex flex-col h-full"
-              style={{ background: cls.bg, minHeight: "520px" }}
+              style={{ background: cls.bg }}
             >
               {/* Giant watermark initial — background illustration */}
               <span
@@ -103,7 +103,7 @@ export function ClassesV2Section() {
               <div className="relative z-10 flex flex-col h-full p-8 md:p-9">
                 {/* Label */}
                 <p
-                  className="text-xs uppercase tracking-widest mb-auto pb-12"
+                  className="text-xs uppercase tracking-widest mb-6"
                   style={{ color: cls.muted }}
                 >
                   {cls.label}
