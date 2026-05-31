@@ -1,10 +1,12 @@
 import { Navbar } from "@/components/Navbar"
-import { HeroSection } from "@/components/HeroSection"
-import { AboutSection } from "@/components/AboutSection"
-import { ClassesSection } from "@/components/ClassesSection"
+import { HeroSectionV2 } from "@/components/HeroSectionV2"
+import { ClassesV2Section } from "@/components/v2/ClassesV2Section"
+import { SpaceV2Section } from "@/components/v2/SpaceV2Section"
+import { PhilosophyV2Section } from "@/components/v2/PhilosophyV2Section"
 import { ScheduleSection } from "@/components/ScheduleSection"
 import { FAQSection } from "@/components/FAQSection"
-import { ContactSection } from "@/components/ContactSection"
+import { ContactV2Section } from "@/components/v2/ContactV2Section"
+import { InstagramV2Section } from "@/components/v2/InstagramV2Section"
 import { Footer } from "@/components/Footer"
 
 export default function Home() {
@@ -12,12 +14,14 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <HeroSection />
-        <AboutSection />
-        <ClassesSection />
+        <HeroSectionV2 />
+        <ClassesV2Section />
+        <SpaceV2Section />
+        <PhilosophyV2Section />
         <ScheduleSection />
         <FAQSection />
-        <ContactSection />
+        <ContactV2Section />
+        <InstagramV2Section />
       </main>
       <Footer />
     </>
