@@ -55,7 +55,7 @@ export function ClassesV2Section() {
             <h2 className="text-hs-text mb-3">Our Classes</h2>
             <p
               className="text-hs-text-muted text-xl md:text-2xl font-light"
-              style={{ fontFamily: "var(--font-cormorant-garamond), Georgia, serif", fontStyle: "italic" }}
+              style={{ fontFamily: "var(--font-cormorant-garamond), Georgia, serif" }}
             >
               Come in. Breathe deep. Go further.
             </p>
