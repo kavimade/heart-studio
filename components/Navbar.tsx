@@ -1,9 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
+import { InstagramFAB } from "@/components/ui/InstagramFAB"
 
 const NAV_LINKS = [
   { href: "#home",     label: "Home" },
@@ -45,18 +45,20 @@ export function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-hs-bg/95 backdrop-blur-sm shadow-sm"
+          mobileOpen
+            ? "bg-[#64644B]"
+            : scrolled
+            ? "bg-hs-bg/95 backdrop-blur-sm"
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative">
 
-          {/* Wordmark */}
+          {/* Left — wordmark */}
           <motion.a
             {...fromTop(0.2)}
             href="#home"
-            className="flex items-center gap-2.5"
+            className="flex items-center gap-2.5 z-10"
           >
             <div className="relative overflow-hidden rounded-full shrink-0" style={{ width: 42, height: 42 }}>
               <Image
@@ -69,14 +71,17 @@ export function Navbar() {
               />
             </div>
             <span className={`font-display text-xl font-medium tracking-tight transition-colors ${
-              scrolled ? "text-hs-text" : "text-hs-white"
+              scrolled && !mobileOpen ? "text-hs-text" : "text-hs-white"
             }`}>
               Heart Studio
             </span>
           </motion.a>
 
-          {/* Desktop links */}
-          <motion.div {...fromTop(0.3)} className="hidden md:flex items-center gap-7">
+          {/* Center — nav links, absolutely centered */}
+          <motion.div
+            {...fromTop(0.3)}
+            className="hidden md:flex items-center gap-7 absolute left-1/2 -translate-x-1/2"
+          >
             {NAV_LINKS.map(({ href, label }) => (
               <a
                 key={href}
@@ -90,52 +95,54 @@ export function Navbar() {
                 {label}
               </a>
             ))}
+          </motion.div>
+
+          {/* Right — CTA + mobile hamburger */}
+          <div className="flex items-center gap-3 z-10">
             <motion.a
               {...fromTop(0.45)}
               href="#schedule"
-              className="bg-hs-terracotta hover:bg-hs-terracotta-dark text-hs-white text-sm px-5 py-2.5 rounded-full transition-colors font-medium"
+              className="hidden md:inline-flex bg-hs-terracotta hover:bg-hs-terracotta-dark text-hs-white text-sm px-5 py-2.5 rounded-full transition-colors font-medium"
             >
               Book a Class
             </motion.a>
-          </motion.div>
 
-          {/* Mobile hamburger */}
           <motion.button
             {...fromTop(0.3)}
-            className="md:hidden p-1 -mr-1 z-[60] relative"
+            className={`md:hidden p-2 -mr-2 z-[60] relative ${
+              mobileOpen ? "text-hs-white" : scrolled ? "text-hs-text" : "text-hs-white"
+            }`}
             onClick={() => setMobileOpen(o => !o)}
             aria-label="Toggle menu"
           >
-            <AnimatePresence mode="wait" initial={false}>
-              {mobileOpen ? (
-                <motion.span
-                  key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0,   opacity: 1 }}
-                  exit={{    rotate:  90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <X size={22} className="text-hs-white" />
-                </motion.span>
-              ) : (
-                <motion.span
-                  key="open"
-                  initial={{ rotate:  90, opacity: 0 }}
-                  animate={{ rotate: 0,   opacity: 1 }}
-                  exit={{    rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu size={22} className={scrolled ? "text-hs-text" : "text-hs-white"} />
-                </motion.span>
-              )}
-            </AnimatePresence>
+            <span className="relative block w-5 h-[14px]" aria-hidden="true">
+              <motion.span
+                className="absolute left-0 w-full h-px bg-current"
+                style={{ top: 0 }}
+                animate={mobileOpen ? { rotate: 45, y: 6.5 } : { rotate: 0, y: 0 }}
+                transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              />
+              <motion.span
+                className="absolute left-0 w-full h-px bg-current"
+                style={{ top: "6.5px" }}
+                animate={mobileOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+                transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+              />
+              <motion.span
+                className="absolute left-0 w-full h-px bg-current"
+                style={{ top: "13px" }}
+                animate={mobileOpen ? { rotate: -45, y: -6.5 } : { rotate: 0, y: 0 }}
+                transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              />
+            </span>
           </motion.button>
+          </div>
 
         </div>
       </nav>
 
       {/* ── Full-screen mobile overlay ─────────────────────────── */}
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {mobileOpen && (
           <motion.div
             initial={{ clipPath: "inset(0 0 100% 0)" }}
@@ -221,6 +228,7 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+      <InstagramFAB hidden={mobileOpen} />
     </>
   )
 }

@@ -1,7 +1,7 @@
 "use client"
 
+import { useEffect, useState, ReactNode } from "react"
 import { motion } from "framer-motion"
-import { ReactNode } from "react"
 
 interface FadeInProps {
   children: ReactNode
@@ -11,6 +11,16 @@ interface FadeInProps {
 }
 
 export function FadeIn({ children, delay = 0, y = 22, className }: FadeInProps) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => { setMounted(true) }, [])
+
+  // Render children without animation wrapper until client is ready —
+  // prevents IntersectionObserver from firing during hydration
+  if (!mounted) {
+    return <div className={className}>{children}</div>
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y }}

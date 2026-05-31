@@ -90,7 +90,7 @@ export function HeroSectionV2() {
       </div>
 
       {/* Bottom left — tagline + CTAs */}
-      <div className="absolute bottom-0 left-0 z-20 px-8 md:px-12 pb-10 md:pb-12">
+      <div className="absolute bottom-0 left-0 right-0 md:right-auto z-20 px-8 md:px-12 pb-10 md:pb-12">
         <motion.p
           {...fadeUp(0.65)}
           className="text-hs-white text-base md:text-lg font-light mb-1"
@@ -105,24 +105,24 @@ export function HeroSectionV2() {
         >
           All levels welcome.
         </motion.p>
-        <motion.div {...fadeUp(0.9)} className="flex flex-wrap gap-3">
+        <motion.div {...fadeUp(0.9)} className="flex gap-3">
           <a
             href="#schedule"
-            className="bg-hs-terracotta hover:bg-hs-terracotta-dark text-hs-white px-6 py-3 rounded-full font-medium text-sm transition-colors inline-flex items-center gap-2"
+            className="bg-hs-terracotta hover:bg-hs-terracotta-dark text-hs-white flex-1 sm:flex-none px-4 py-2.5 sm:px-6 sm:py-3 rounded-full font-medium text-sm transition-colors inline-flex items-center justify-center gap-2"
           >
-            Book a Class →
+            Book a Class<span className="hidden sm:inline"> →</span>
           </a>
           <a
             href="#classes"
-            className="border border-hs-white/55 hover:border-hs-white text-hs-white px-6 py-3 rounded-full text-sm transition-colors backdrop-blur-sm"
+            className="border border-hs-white/55 hover:border-hs-white text-hs-white flex-1 sm:flex-none px-4 py-2.5 sm:px-6 sm:py-3 rounded-full text-sm transition-colors backdrop-blur-sm text-center"
           >
-            Our Classes →
+            Our Classes<span className="hidden sm:inline"> →</span>
           </a>
         </motion.div>
       </div>
 
-      {/* Bottom right — Instagram */}
-      <div className="absolute bottom-0 right-0 z-20 px-8 md:px-12 pb-10 md:pb-12">
+      {/* Bottom right — Instagram (desktop only; mobile uses InstagramFAB) */}
+      <div className="hidden md:block absolute bottom-0 right-0 z-20 px-8 md:px-12 pb-10 md:pb-12">
         <motion.a
           {...fadeIn(0.9)}
           href="https://www.instagram.com/heartstudio.dn"

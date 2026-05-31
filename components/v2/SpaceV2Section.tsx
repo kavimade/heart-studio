@@ -46,7 +46,7 @@ export function SpaceV2Section() {
       <div className="grid md:grid-cols-2 min-h-[600px] md:min-h-[750px]">
 
         {/* Left — text, vertically centered */}
-        <FadeIn className="order-2 md:order-1 flex flex-col justify-center px-8 md:px-14 lg:px-20 py-20 md:py-28 bg-hs-bg">
+        <FadeIn className="order-2 md:order-1 flex flex-col justify-center px-8 md:px-14 lg:px-20 pt-4 pb-16 md:py-28 bg-hs-bg">
           <p className="text-hs-text-muted text-xs uppercase tracking-widest mb-4">Our Space</p>
           <h2 className="text-hs-text mb-6">
             Welcome to{" "}

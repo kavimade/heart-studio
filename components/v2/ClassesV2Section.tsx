@@ -61,17 +61,9 @@ export function ClassesV2Section() {
             </p>
           </div>
           <div className="md:pt-2">
-            <p className="text-hs-text-muted leading-relaxed mb-6">
+            <p className="text-hs-text-muted leading-relaxed">
               Four pillars of practice, each designed to complement the others — rooted in the spirit of yoga while meeting the demands of modern life. All levels welcome.
             </p>
-            <div className="flex gap-8">
-              <a href="#schedule" className="text-hs-text underline underline-offset-4 hover:text-hs-olive transition-colors">
-                Book a Class →
-              </a>
-              <a href="#schedule" className="text-hs-text-muted underline underline-offset-4 hover:text-hs-olive transition-colors">
-                View Schedule →
-              </a>
-            </div>
           </div>
         </div>
         </FadeIn>
@@ -142,6 +134,14 @@ export function ClassesV2Section() {
           All levels welcome. Not sure where to start?{" "}
           <span className="text-hs-text font-medium">Hatha or Yin</span> is a gentle entry point.
         </p>
+        <div className="flex justify-center mt-8">
+          <a
+            href="#schedule"
+            className="bg-hs-terracotta hover:bg-hs-terracotta-dark text-hs-white px-8 py-3 rounded-full font-medium text-sm transition-colors"
+          >
+            Book a Class →
+          </a>
+        </div>
       </div>
     </section>
   )
