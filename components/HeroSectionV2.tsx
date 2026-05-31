@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 
 const SLIDES = [
   { src: "/images/space-01.webp", alt: "Heart Studio yoga space interior — Da Nang, Vietnam" },
@@ -28,13 +28,15 @@ const fadeIn = (delay: number) => ({
 
 export function HeroSectionV2() {
   const [current, setCurrent] = useState(0)
+  const reducedMotion = useReducedMotion()
 
   useEffect(() => {
+    if (reducedMotion) return
     const id = setInterval(() => {
       setCurrent(prev => (prev + 1) % SLIDES.length)
     }, 5000)
     return () => clearInterval(id)
-  }, [])
+  }, [reducedMotion])
 
   return (
     <section id="home" className="relative h-[95svh] md:h-screen overflow-hidden">

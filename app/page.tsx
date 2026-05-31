@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <HeroSectionV2 />
         <ClassesV2Section />
         <SpaceV2Section />

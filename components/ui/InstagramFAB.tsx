@@ -17,18 +17,22 @@ export function InstagramFAB({ hidden = false }: { hidden?: boolean }) {
     return () => observer.disconnect()
   }, [])
 
+  const active = visible && !hidden
+
   return (
     <a
       href="https://www.instagram.com/heartstudio.dn"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Follow Heart Studio on Instagram"
+      aria-label="Follow Heart Studio on Instagram (opens in new tab)"
+      aria-hidden={!active}
+      tabIndex={active ? 0 : -1}
       className="fixed bottom-6 right-6 z-50 h-10 rounded-full flex items-center gap-2.5 px-4 shadow-lg transition-all duration-500"
       style={{
         background: "var(--color-hs-terracotta, #C4714A)",
-        opacity: visible && !hidden ? 1 : 0,
-        transform: visible && !hidden ? "translateY(0)" : "translateY(12px)",
-        pointerEvents: visible && !hidden ? "auto" : "none",
+        opacity: active ? 1 : 0,
+        transform: active ? "translateY(0)" : "translateY(12px)",
+        pointerEvents: active ? "auto" : "none",
       }}
     >
       <svg

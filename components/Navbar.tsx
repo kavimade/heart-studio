@@ -44,6 +44,7 @@ export function Navbar() {
   return (
     <>
       <nav
+        aria-label="Main navigation"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           mobileOpen
             ? "bg-[#64644B]"
@@ -114,6 +115,7 @@ export function Navbar() {
             }`}
             onClick={() => setMobileOpen(o => !o)}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             <span className="relative block w-5 h-[13px]" aria-hidden="true">
               <motion.span
@@ -215,9 +217,9 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-hs-white/50 hover:text-hs-white transition-colors"
-                aria-label="Instagram"
+                aria-label="Instagram (opens in new tab)"
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                   <circle cx="12" cy="12" r="4"/>
                   <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>

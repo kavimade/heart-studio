@@ -59,6 +59,7 @@ export function FAQSection() {
                 <ChevronDown
                   size={18}
                   className="text-hs-text-muted shrink-0 transition-transform duration-300 group-open:rotate-180"
+                  aria-hidden="true"
                 />
               </summary>
               <p className="text-hs-text-muted text-sm md:text-base leading-relaxed pb-5">

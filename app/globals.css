@@ -100,6 +100,22 @@ h6 {
   transition: opacity 1.5s ease-in-out;
 }
 
+/* ── Focus visible ────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid #6B7A50;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Reduced motion ───────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    transition: none;
+  }
+}
+
 /* ── Scrollbar utilities ───────────────────────────────── */
 
 .scrollbar-hide {

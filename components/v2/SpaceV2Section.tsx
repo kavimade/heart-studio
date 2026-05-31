@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react"
+import { useReducedMotion } from "framer-motion"
 import { FadeIn } from "@/components/ui/FadeIn"
 
 const SPACE_SLIDES = [
@@ -32,14 +33,16 @@ const ACCORDION = [
 export function SpaceV2Section() {
   const [slide, setSlide] = useState(0)
   const [open,  setOpen]  = useState<number | null>(null)
+  const reducedMotion = useReducedMotion()
 
   const prev = useCallback(() => setSlide(s => (s - 1 + SPACE_SLIDES.length) % SPACE_SLIDES.length), [])
   const next = useCallback(() => setSlide(s => (s + 1) % SPACE_SLIDES.length), [])
 
   useEffect(() => {
+    if (reducedMotion) return
     const id = setInterval(next, 5000)
     return () => clearInterval(id)
-  }, [next])
+  }, [next, reducedMotion])
 
   return (
     <section id="about" className="bg-hs-bg overflow-hidden">
