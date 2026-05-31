@@ -6,8 +6,9 @@ export function ContactV2Section() {
 
           {/* Left — heading + tagline */}
           <div>
-            <h2 className="text-hs-olive mb-5">Come as you are.</h2>
-            <p className="text-hs-text-muted text-xl md:text-2xl leading-snug font-light">
+            <p className="text-hs-olive text-xs uppercase tracking-widest mb-3">Find us</p>
+            <h2 className="text-hs-text mb-5">Come as you are.</h2>
+            <p className="text-hs-text-muted leading-snug font-light" style={{ fontSize: "1.2rem" }}>
               Whether you&rsquo;re ready to begin, or simply{" "}
               <em style={{ fontStyle: "italic" }}>curious</em>{" "}
               — you&rsquo;re welcome here.
