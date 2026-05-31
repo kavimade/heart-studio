@@ -6,11 +6,11 @@ import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react"
 import { FadeIn } from "@/components/ui/FadeIn"
 
 const SPACE_SLIDES = [
-  { src: "/images/space-01.webp", alt: "Heart Studio interior" },
-  { src: "/images/space-02.webp", alt: "Heart Studio practice room" },
-  { src: "/images/space-03.webp", alt: "Heart Studio atmosphere" },
-  { src: "/images/space-04.webp", alt: "Heart Studio detail" },
-  { src: "/images/space-05.webp", alt: "Heart Studio light" },
+  { src: "/images/space-01.webp", alt: "Heart Studio yoga space interior — Da Nang, Vietnam" },
+  { src: "/images/space-02.webp", alt: "Heart Studio practice room — Da Nang" },
+  { src: "/images/space-03.webp", alt: "Heart Studio yoga studio atmosphere — Da Nang" },
+  { src: "/images/space-04.webp", alt: "Heart Studio studio detail — Da Nang" },
+  { src: "/images/space-05.webp", alt: "Heart Studio light and space — yoga studio Da Nang" },
 ]
 
 const ACCORDION = [
@@ -47,7 +47,7 @@ export function SpaceV2Section() {
 
         {/* Left — text, vertically centered */}
         <FadeIn className="order-2 md:order-1 flex flex-col justify-center px-8 md:px-14 lg:px-20 pt-4 pb-16 md:py-28 bg-hs-bg">
-          <p className="text-hs-text-muted text-xs uppercase tracking-widest mb-4">Our Space</p>
+          <p className="text-hs-olive text-xs uppercase tracking-widest mb-4">Our Space</p>
           <h2 className="text-hs-text mb-6">
             Welcome to{" "}
             <em style={{ fontStyle: "italic", fontFamily: "var(--font-cormorant-garamond), Georgia, serif" }}>
@@ -111,7 +111,6 @@ export function SpaceV2Section() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  priority={i === 0}
                 />
               </div>
             ))}

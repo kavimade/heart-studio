@@ -54,8 +54,8 @@ export function ClassesV2Section() {
           <div>
             <h2 className="text-hs-text mb-3">Our Classes</h2>
             <p
-              className="text-hs-text-muted text-xl md:text-2xl font-light"
-              style={{ fontFamily: "var(--font-cormorant-garamond), Georgia, serif" }}
+              className="text-hs-olive font-light"
+              style={{ fontFamily: "var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif", fontSize: "1.2rem" }}
             >
               Come in. Breathe deep. Go further.
             </p>
@@ -130,7 +130,7 @@ export function ClassesV2Section() {
           ))}
         </div>
 
-        <p className="text-hs-text-muted text-sm text-center mt-10">
+        <p className="text-hs-text-muted text-base text-center mt-10">
           All levels welcome. Not sure where to start?{" "}
           <span className="text-hs-text font-medium">Hatha or Yin</span> is a gentle entry point.
         </p>

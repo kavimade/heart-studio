@@ -1,6 +1,3 @@
-"use client"
-
-import { useState } from "react"
 import { ChevronDown } from "lucide-react"
 
 const FAQS = [
@@ -47,8 +44,6 @@ const FAQS = [
 ]
 
 export function FAQSection() {
-  const [open, setOpen] = useState<number | null>(null)
-
   return (
     <section id="faq" className="bg-hs-bg py-20 md:py-32">
       <div className="max-w-3xl mx-auto px-6">
@@ -56,35 +51,20 @@ export function FAQSection() {
 
         <div className="divide-y divide-hs-border">
           {FAQS.map((faq, i) => (
-            <div key={i}>
-              {/* Full-row tap target */}
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full text-left flex items-center justify-between gap-4 py-5 cursor-pointer"
-                aria-expanded={open === i}
-              >
+            <details key={i} className="group">
+              <summary className="list-none [&::-webkit-details-marker]:hidden w-full text-left flex items-center justify-between gap-4 py-5 cursor-pointer">
                 <span className="text-hs-text font-medium text-base md:text-lg leading-snug">
                   {faq.q}
                 </span>
                 <ChevronDown
                   size={18}
-                  className={`text-hs-text-muted shrink-0 transition-transform duration-300 ${
-                    open === i ? "rotate-180" : ""
-                  }`}
+                  className="text-hs-text-muted shrink-0 transition-transform duration-300 group-open:rotate-180"
                 />
-              </button>
-
-              {/* Answer */}
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  open === i ? "max-h-96 pb-5" : "max-h-0"
-                }`}
-              >
-                <p className="text-hs-text-muted text-sm md:text-base leading-relaxed">
-                  {faq.a}
-                </p>
-              </div>
-            </div>
+              </summary>
+              <p className="text-hs-text-muted text-sm md:text-base leading-relaxed pb-5">
+                {faq.a}
+              </p>
+            </details>
           ))}
         </div>
       </div>

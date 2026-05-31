@@ -78,6 +78,22 @@ h6 {
   font-weight: 500;
 }
 
+/* ── Hero tagline — overrides h1 scale for the small subtitle ── */
+
+.hero-tagline {
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+@media (min-width: 768px) {
+  .hero-tagline {
+    font-size: 1.125rem;
+  }
+}
+
 /* ── Slide transition ─────────────────────────────────── */
 
 .hero-slide {

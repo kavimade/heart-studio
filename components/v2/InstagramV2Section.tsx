@@ -22,7 +22,7 @@ export function InstagramV2Section() {
 
         {/* Header */}
         <div className="px-6 md:px-12 mb-10">
-          <p className="text-hs-text-muted text-xs uppercase tracking-widest mb-3">
+          <p className="text-hs-olive text-xs uppercase tracking-widest mb-3">
             @heartstudio.dn
           </p>
           <h2 className="text-hs-text">Connect with us</h2>

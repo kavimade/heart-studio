@@ -5,11 +5,11 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 
 const SLIDES = [
-  { src: "/images/space-01.webp", alt: "Heart Studio yoga space interior" },
-  { src: "/images/space-02.webp", alt: "Heart Studio practice room" },
-  { src: "/images/space-03.webp", alt: "Heart Studio atmosphere" },
-  { src: "/images/space-04.webp", alt: "Heart Studio detail" },
-  { src: "/images/space-05.webp", alt: "Heart Studio light and space" },
+  { src: "/images/space-01.webp", alt: "Heart Studio yoga space interior — Da Nang, Vietnam" },
+  { src: "/images/space-02.webp", alt: "Heart Studio practice room — yoga studio Da Nang" },
+  { src: "/images/space-03.webp", alt: "Heart Studio yoga studio atmosphere — Da Nang" },
+  { src: "/images/space-04.webp", alt: "Heart Studio studio detail — Da Nang" },
+  { src: "/images/space-05.webp", alt: "Heart Studio light and space — yoga in Da Nang" },
 ]
 
 const ease = [0.25, 0.1, 0.25, 1] as [number, number, number, number]
@@ -72,7 +72,7 @@ export function HeroSectionV2() {
 
       {/* HEART STUDIO — big centered wordmark */}
       <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-        <motion.p
+        <motion.h2
           {...fadeUp(0.35)}
           style={{
             fontFamily:  "var(--font-cormorant-garamond), Georgia, serif",
@@ -86,18 +86,18 @@ export function HeroSectionV2() {
           }}
         >
           Heart Studio
-        </motion.p>
+        </motion.h2>
       </div>
 
       {/* Bottom left — tagline + CTAs */}
       <div className="absolute bottom-0 left-0 right-0 md:right-auto z-20 px-8 md:px-12 pb-10 md:pb-12">
-        <motion.p
+        <motion.h1
           {...fadeUp(0.65)}
-          className="text-hs-white text-base md:text-lg font-light mb-1"
+          className="hero-tagline text-hs-white mb-1"
           style={{ textShadow: "0 1px 10px rgba(0,0,0,0.5)" }}
         >
           Yoga in Da Nang.
-        </motion.p>
+        </motion.h1>
         <motion.p
           {...fadeUp(0.75)}
           className="text-hs-white/65 text-sm mb-6"

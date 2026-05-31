@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const cormorantGaramond = localFont({
@@ -32,19 +33,188 @@ const dmSans = localFont({
   ],
 })
 
+const SITE_URL = "https://heart-studio.vercel.app"
+
 export const metadata: Metadata = {
   title: "Heart Studio by Chan — Yoga in Da Nang",
   description:
     "A small, intentional yoga studio in Da Nang. Hatha, Vinyasa, Yin, and functional movement classes taught by Chan. All levels welcome.",
-  keywords: "yoga Da Nang, yoga studio Da Nang, Hatha yoga, Vinyasa Da Nang, Yin yoga, Heart Studio",
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     title: "Heart Studio by Chan — Yoga in Da Nang",
-    description: "Intentional yoga classes in Da Nang. All levels welcome.",
-    url: "https://heartstudio.vn",
+    description:
+      "A small, intentional yoga studio in Da Nang. Hatha, Vinyasa, Yin, and functional movement classes taught by Chan. All levels welcome.",
+    url: SITE_URL,
     siteName: "Heart Studio by Chan",
     locale: "en_US",
+    alternateLocale: ["vi_VN"],
     type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/images/space-01.webp`,
+        width: 1200,
+        height: 800,
+        alt: "Heart Studio yoga space — Da Nang, Vietnam",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Heart Studio by Chan — Yoga in Da Nang",
+    description:
+      "A small, intentional yoga studio in Da Nang. Hatha, Vinyasa, Yin, and functional movement classes taught by Chan.",
+    images: [`${SITE_URL}/images/space-01.webp`],
+  },
+}
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SportsActivityLocation",
+      "@id": `${SITE_URL}/#business`,
+      "name": "Heart Studio by Chan",
+      "description":
+        "A small, intentional yoga studio in Da Nang, Vietnam. Hatha, Vinyasa, Yin, and functional movement classes taught by Chan. All levels welcome. Classes in English and Vietnamese.",
+      "url": SITE_URL,
+      "image": `${SITE_URL}/images/space-01.webp`,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "36 Nai Nam 8",
+        "addressLocality": "Hai Chau",
+        "addressRegion": "Da Nang",
+        "addressCountry": "VN",
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 16.0544,
+        "longitude": 108.2022,
+      },
+      "hasMap": "https://maps.app.goo.gl/262E4hjNeNseDdKGA",
+      "sameAs": ["https://www.instagram.com/heartstudio.dn"],
+      "inLanguage": ["en", "vi"],
+      "founder": { "@id": `${SITE_URL}/#chan` },
+      "employee": { "@id": `${SITE_URL}/#chan` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#chan`,
+      "name": "Chan",
+      "jobTitle": "Yoga Teacher & Studio Founder",
+      "description":
+        "Yoga teacher with 8 years of experience and over 1,000 hours of training in yoga, anatomy, and therapeutic movement. Has led anatomy trainings and mentorship programs for teachers across Vietnam. Studied in Hoi An, Thailand, and Bali.",
+      "worksFor": { "@id": `${SITE_URL}/#business` },
+      "sameAs": ["https://www.instagram.com/heartstudio.dn"],
+      "knowsLanguage": ["en", "vi"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      "name": "Heart Studio by Chan",
+      "url": SITE_URL,
+      "inLanguage": ["en", "vi"],
+      "publisher": { "@id": `${SITE_URL}/#business` },
+    },
+    {
+      "@type": "Service",
+      "name": "Hatha Yoga",
+      "description":
+        "A slower, deliberate practice focused on alignment, awareness, and the deeper meaning within each posture. All levels welcome.",
+      "serviceType": "Yoga Class",
+      "provider": { "@id": `${SITE_URL}/#business` },
+      "areaServed": { "@type": "City", "name": "Da Nang", "addressCountry": "VN" },
+    },
+    {
+      "@type": "Service",
+      "name": "Vinyasa Yoga",
+      "description":
+        "Strength, resilience, focus, and flow linked together through breath. Playful and challenging.",
+      "serviceType": "Yoga Class",
+      "provider": { "@id": `${SITE_URL}/#business` },
+      "areaServed": { "@type": "City", "name": "Da Nang", "addressCountry": "VN" },
+    },
+    {
+      "@type": "Service",
+      "name": "Yin Yoga",
+      "description":
+        "Long-held postures that release deep tension, calm the nervous system, and return you to stillness. All levels welcome.",
+      "serviceType": "Yoga Class",
+      "provider": { "@id": `${SITE_URL}/#business` },
+      "areaServed": { "@type": "City", "name": "Da Nang", "addressCountry": "VN" },
+    },
+    {
+      "@type": "Service",
+      "name": "Breath, Core & Posture",
+      "description":
+        "Functional movement class for spinal health, core strength, and breath mechanics. Ideal for people who sit at desks or carry tension in the spine.",
+      "serviceType": "Yoga Class",
+      "provider": { "@id": `${SITE_URL}/#business` },
+      "areaServed": { "@type": "City", "name": "Da Nang", "addressCountry": "VN" },
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where are you located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "36 Nai Nam 8, Hai Chau, Da Nang, Vietnam.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "I'm new to yoga. Is this the right place for me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All classes at Heart are open to beginners. Chan teaches with precision and care — you'll never feel lost or left behind. Hatha or Yin is a good place to start.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "What should I bring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Comfortable movement clothing. Mats and props are provided. You're welcome to bring your own mat if you prefer.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "How do I book?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Through the schedule on the website or the Vibefam app. First-time visitors are also welcome to message on Instagram at @heartstudio.dn.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "What is your cancellation policy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Free cancellation up to 3 hours before class. Late cancellations or no-shows may be counted against your package.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer private sessions or workshops?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Chan offers workshops periodically and is available for private sessions. Send a message on Instagram at @heartstudio.dn to arrange.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Do you teach in English and Vietnamese?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. Chan teaches comfortably in either language. All communications are bilingual.",
+          },
+        },
+      ],
+    },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -55,7 +225,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body className="min-h-screen antialiased" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
         {children}
+        <Analytics />
       </body>
     </html>
   )

@@ -20,11 +20,11 @@ export function ContactV2Section() {
             {/* 3-column info block */}
             <div className="grid grid-cols-3 gap-6 pb-10 mb-10 border-b border-hs-border">
               <div>
-                <p className="text-hs-text text-sm leading-relaxed">
+                <address className="not-italic text-hs-text text-sm leading-relaxed">
                   36 Nai Nam 8<br />
                   Hai Chau, Da Nang<br />
                   Vietnam
-                </p>
+                </address>
                 <a
                   href="https://maps.app.goo.gl/262E4hjNeNseDdKGA"
                   target="_blank"
