@@ -37,7 +37,7 @@ export function HeroSectionV2() {
   }, [])
 
   return (
-    <section id="home" className="relative h-screen overflow-hidden">
+    <section id="home" className="relative h-[95svh] md:h-screen overflow-hidden">
       {/* Slides */}
       {SLIDES.map((slide, i) => (
         <div
@@ -108,13 +108,13 @@ export function HeroSectionV2() {
         <motion.div {...fadeUp(0.9)} className="flex gap-3">
           <a
             href="#schedule"
-            className="bg-hs-terracotta hover:bg-hs-terracotta-dark text-hs-white flex-1 sm:flex-none px-4 py-2.5 sm:px-6 sm:py-3 rounded-full font-medium text-sm transition-colors inline-flex items-center justify-center gap-2"
+            className="bg-hs-terracotta hover:bg-hs-terracotta-dark text-hs-white flex-1 sm:flex-none px-4 py-3.5 sm:px-6 sm:py-3 rounded-full font-medium text-sm transition-colors inline-flex items-center justify-center gap-2"
           >
             Book a Class<span className="hidden sm:inline"> →</span>
           </a>
           <a
             href="#classes"
-            className="border border-hs-white/55 hover:border-hs-white text-hs-white flex-1 sm:flex-none px-4 py-2.5 sm:px-6 sm:py-3 rounded-full text-sm transition-colors backdrop-blur-sm text-center"
+            className="border border-hs-white/55 hover:border-hs-white text-hs-white flex-1 sm:flex-none px-4 py-3.5 sm:px-6 sm:py-3 rounded-full text-sm transition-colors backdrop-blur-sm text-center"
           >
             Our Classes<span className="hidden sm:inline"> →</span>
           </a>

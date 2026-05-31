@@ -54,7 +54,7 @@ h2 {
 
 h3 {
   font-family: var(--font-cormorant-garamond), Georgia, serif;
-  font-size: clamp(1.65rem, 3.2vw, 2.2rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.2rem);
   line-height: 1.2;
   font-weight: 600;
 }
