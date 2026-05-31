@@ -93,6 +93,13 @@ const schema = {
         "longitude": 108.2022,
       },
       "hasMap": "https://maps.app.goo.gl/262E4hjNeNseDdKGA",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "9",
+        "bestRating": "5",
+        "worstRating": "1",
+      },
       "sameAs": ["https://www.instagram.com/heartstudio.dn"],
       "inLanguage": ["en", "vi"],
       "founder": { "@id": `${SITE_URL}/#chan` },

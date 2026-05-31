@@ -7,6 +7,7 @@ import { ScheduleSection } from "@/components/ScheduleSection"
 import { FAQSection } from "@/components/FAQSection"
 import { ContactV2Section } from "@/components/v2/ContactV2Section"
 import { InstagramV2Section } from "@/components/v2/InstagramV2Section"
+import { ReviewsSection } from "@/components/ReviewsSection"
 import { Footer } from "@/components/Footer"
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <FAQSection />
         <ContactV2Section />
         <InstagramV2Section />
+        <ReviewsSection />
       </main>
       <Footer />
     </>

@@ -4,15 +4,15 @@ import Image from "next/image"
 // API approach: GET https://graph.instagram.com/me/media?fields=id,media_type,thumbnail_url,media_url,permalink&access_token=TOKEN
 // Requires: Meta Business account + Instagram Graph API app + long-lived access token (refresh every 60 days).
 const FEED = [
-  { src: "/images/space-01.webp",    alt: "Heart Studio interior" },
-  { src: "/images/opening-02.webp",  alt: "Heart Studio opening" },
-  { src: "/images/retreat-01.webp",  alt: "Retreat practice" },
-  { src: "/images/gathering-02.webp",alt: "Heart community" },
-  { src: "/images/space-02.webp",    alt: "Studio space" },
-  { src: "/images/opening-04.webp",  alt: "Opening day" },
-  { src: "/images/retreat-03.webp",  alt: "Yoga retreat" },
-  { src: "/images/props-04.webp",    alt: "Studio props" },
-  { src: "/images/space-04.webp",    alt: "Studio detail" },
+  { src: "/images/space-01.webp",    alt: "Heart Studio yoga space interior — Da Nang, Vietnam" },
+  { src: "/images/opening-02.webp",  alt: "Heart Studio opening day — Da Nang" },
+  { src: "/images/retreat-01.webp",  alt: "Yoga retreat at Heart Studio — Da Nang" },
+  { src: "/images/gathering-02.webp",alt: "Heart Studio yoga community — Da Nang, Vietnam" },
+  { src: "/images/space-02.webp",    alt: "Heart Studio practice room — Da Nang" },
+  { src: "/images/opening-04.webp",  alt: "Heart Studio opening — yoga studio Da Nang" },
+  { src: "/images/retreat-03.webp",  alt: "Yoga retreat practice at Heart Studio — Da Nang" },
+  { src: "/images/props-04.webp",    alt: "Yoga props at Heart Studio — Da Nang" },
+  { src: "/images/space-04.webp",    alt: "Heart Studio detail — yoga studio Da Nang, Vietnam" },
 ]
 
 export function InstagramV2Section() {
