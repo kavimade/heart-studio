@@ -83,9 +83,9 @@ export function ReviewsSection() {
         <div className="px-6 md:px-12 mb-10 flex items-end justify-between gap-6">
           <div>
             <p className="text-hs-olive text-xs uppercase tracking-widest mb-3">
-              What others have to say
+              What students say
             </p>
-            <h2 className="text-hs-text">Testimonials</h2>
+            <h2 className="text-hs-text">From the community</h2>
           </div>
           <div className="hidden md:flex gap-2 shrink-0 mb-1">
             <button
