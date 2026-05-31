@@ -3,7 +3,7 @@ import { KaviBadge } from "@/components/ui/KaviBadge"
 
 export function Footer() {
   return (
-    <footer style={{ background: "#64644B" }} className="py-10 md:py-14">
+    <footer style={{ background: "#64644B" }} className="pt-10 pb-28 md:py-14">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
 

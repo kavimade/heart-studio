@@ -109,29 +109,29 @@ export function Navbar() {
 
           <motion.button
             {...fromTop(0.3)}
-            className={`md:hidden p-2 -mr-2 z-[60] relative ${
+            className={`md:hidden min-w-[48px] min-h-[48px] flex items-center justify-center -mr-3 z-[60] relative touch-manipulation ${
               mobileOpen ? "text-hs-white" : scrolled ? "text-hs-text" : "text-hs-white"
             }`}
             onClick={() => setMobileOpen(o => !o)}
             aria-label="Toggle menu"
           >
-            <span className="relative block w-5 h-[14px]" aria-hidden="true">
+            <span className="relative block w-5 h-[13px]" aria-hidden="true">
               <motion.span
-                className="absolute left-0 w-full h-px bg-current"
-                style={{ top: 0 }}
-                animate={mobileOpen ? { rotate: 45, y: 6.5 } : { rotate: 0, y: 0 }}
+                className="absolute left-0 w-full bg-current"
+                style={{ top: 0, height: "1px" }}
+                animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               />
               <motion.span
-                className="absolute left-0 w-full h-px bg-current"
-                style={{ top: "6.5px" }}
+                className="absolute left-0 w-full bg-current"
+                style={{ top: "6px", height: "1px" }}
                 animate={mobileOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
                 transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
               />
               <motion.span
-                className="absolute left-0 w-full h-px bg-current"
-                style={{ top: "13px" }}
-                animate={mobileOpen ? { rotate: -45, y: -6.5 } : { rotate: 0, y: 0 }}
+                className="absolute left-0 w-full bg-current"
+                style={{ top: "12px", height: "1px" }}
+                animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
                 transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               />
             </span>

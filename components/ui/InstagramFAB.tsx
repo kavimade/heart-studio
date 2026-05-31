@@ -23,7 +23,7 @@ export function InstagramFAB({ hidden = false }: { hidden?: boolean }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Follow Heart Studio on Instagram"
-      className="md:hidden fixed bottom-6 right-6 z-50 h-12 rounded-full flex items-center gap-2.5 px-4 shadow-lg transition-all duration-500"
+      className="fixed bottom-6 right-6 z-50 h-10 rounded-full flex items-center gap-2.5 px-4 shadow-lg transition-all duration-500"
       style={{
         background: "var(--color-hs-terracotta, #C4714A)",
         opacity: visible && !hidden ? 1 : 0,
