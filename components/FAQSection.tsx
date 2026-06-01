@@ -41,6 +41,10 @@ const FAQS = [
     q: "Do you teach in English and Vietnamese?",
     a: "Both. Chan teaches comfortably in either language. All communications are bilingual.",
   },
+  {
+    q: "Can I rent the studio space?",
+    a: "Yes. The studio is available for workshops, events, and content creation. It's a beautiful, calm space — ideal for wellness teachers, photographers, and creators. Send us a message on Instagram to check availability.",
+  },
 ]
 
 export function FAQSection() {

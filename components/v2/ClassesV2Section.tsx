@@ -52,7 +52,7 @@ export function ClassesV2Section() {
         <FadeIn>
         <div className="grid md:grid-cols-[5fr_7fr] gap-8 md:gap-16 mb-14 items-start">
           <div>
-            <h2 className="text-hs-text mb-3">Our Classes</h2>
+            <h2 className="text-hs-text mb-3">Yoga Classes</h2>
             <p
               className="text-hs-olive font-light"
               style={{ fontFamily: "var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif", fontSize: "1.2rem" }}

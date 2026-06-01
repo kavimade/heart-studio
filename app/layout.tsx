@@ -36,16 +36,20 @@ const dmSans = localFont({
 const SITE_URL = "https://heart-studio.vercel.app"
 
 export const metadata: Metadata = {
-  title: "Heart Studio by Chan — Yoga in Da Nang",
+  title: "Yoga Classes in Da Nang | Heart Studio by Chan",
   description:
-    "A small, intentional yoga studio in Da Nang. Hatha, Vinyasa, Yin, and functional movement classes taught by Chan. All levels welcome.",
+    "Yoga classes in Da Nang for all levels — Hatha, Vinyasa, Yin, and more. Book a class at Heart Studio with Chan. Taught in English and Vietnamese.",
   alternates: {
     canonical: SITE_URL,
+    languages: {
+      "en": SITE_URL,
+      "vi": SITE_URL,
+    },
   },
   openGraph: {
-    title: "Heart Studio by Chan — Yoga in Da Nang",
+    title: "Yoga Classes in Da Nang | Heart Studio by Chan",
     description:
-      "A small, intentional yoga studio in Da Nang. Hatha, Vinyasa, Yin, and functional movement classes taught by Chan. All levels welcome.",
+      "Yoga classes in Da Nang for all levels — Hatha, Vinyasa, Yin, and more. Book a class at Heart Studio with Chan. Taught in English and Vietnamese.",
     url: SITE_URL,
     siteName: "Heart Studio by Chan",
     locale: "en_US",
@@ -62,9 +66,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Heart Studio by Chan — Yoga in Da Nang",
+    title: "Yoga Classes in Da Nang | Heart Studio by Chan",
     description:
-      "A small, intentional yoga studio in Da Nang. Hatha, Vinyasa, Yin, and functional movement classes taught by Chan.",
+      "Yoga classes in Da Nang for all levels — Hatha, Vinyasa, Yin, and more. Book a class at Heart Studio with Chan.",
     images: [`${SITE_URL}/images/space-01.webp`],
   },
 }
@@ -101,6 +105,14 @@ const schema = {
         "worstRating": "1",
       },
       "sameAs": ["https://www.instagram.com/heartstudio.dn"],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "19:00",
+        },
+      ],
       "inLanguage": ["en", "vi"],
       "founder": { "@id": `${SITE_URL}/#chan` },
       "employee": { "@id": `${SITE_URL}/#chan` },
@@ -217,6 +229,14 @@ const schema = {
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Both. Chan teaches comfortably in either language. All communications are bilingual.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Can I rent the studio space?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The studio is available for workshops, events, and content creation. It's a beautiful, calm space — ideal for wellness teachers, photographers, and creators. Send a message on Instagram at @heartstudio.dn to check availability.",
           },
         },
       ],
