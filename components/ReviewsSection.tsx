@@ -79,7 +79,7 @@ export function ReviewsSection() {
         <div className="px-6 md:px-12 mb-10 flex items-end justify-between gap-6">
           <div>
             <p className="text-hs-olive text-xs uppercase tracking-widest mb-3">
-              What students say
+              In their words
             </p>
             <h2 className="text-hs-text">From the community</h2>
           </div>
@@ -102,6 +102,9 @@ export function ReviewsSection() {
         </div>
 
         {/* Card strip */}
+        <div className="relative">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-2 w-16 md:w-24 z-10 bg-gradient-to-r from-hs-bg to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-2 w-16 md:w-24 z-10 bg-gradient-to-l from-hs-bg to-transparent" />
         <div
           ref={scrollRef}
           className="flex gap-5 overflow-x-auto scrollbar-hide px-6 md:px-12 pb-2"
@@ -125,6 +128,23 @@ export function ReviewsSection() {
               </p>
             </article>
           ))}
+
+          {/* See more card */}
+          <a
+            data-card=""
+            href="https://maps.app.goo.gl/262E4hjNeNseDdKGA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 bg-hs-white rounded-2xl p-6 md:p-7 flex flex-col items-center justify-center gap-4 border border-hs-border/60 hover:bg-hs-surface transition-colors"
+            style={{ width: "clamp(270px, 38vw, 340px)" }}
+          >
+            <GoogleG />
+            <Stars />
+            <p className="text-hs-text text-sm font-medium tracking-wide text-center flex items-center gap-1.5">
+              See more reviews <span aria-hidden="true">→</span>
+            </p>
+          </a>
+        </div>
         </div>
 
       </div>

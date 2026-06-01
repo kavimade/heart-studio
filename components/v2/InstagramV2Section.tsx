@@ -29,6 +29,9 @@ export function InstagramV2Section() {
         </div>
 
         {/* Horizontal scrollable tile strip */}
+        <div className="relative">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-2 w-16 md:w-24 z-10 bg-gradient-to-r from-hs-bg to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-2 w-16 md:w-24 z-10 bg-gradient-to-l from-hs-bg to-transparent" />
         <div
           className="flex gap-3 overflow-x-auto scrollbar-hide px-6 md:px-12 pb-2"
         >
@@ -70,6 +73,7 @@ export function InstagramV2Section() {
               See all posts
             </span>
           </a>
+        </div>
         </div>
 
       </div>
