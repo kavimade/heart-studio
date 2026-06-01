@@ -2,7 +2,7 @@ export function ScheduleSection() {
   return (
     <section id="schedule" className="bg-hs-olive py-20 md:py-28">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-hs-white mb-3">Book a Class.</h2>
+        <h2 className="text-hs-white mb-3">Book a Yoga Class.</h2>
         <p className="text-hs-white/75 text-base md:text-lg mb-10">
           Book directly through the schedule below.
         </p>
