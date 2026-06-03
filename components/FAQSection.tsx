@@ -49,7 +49,7 @@ const FAQS = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="bg-hs-bg py-20 md:py-32">
+    <section id="faq" className="bg-hs-bg pb-20 md:py-32">
       <div className="max-w-3xl mx-auto px-6">
         <h2 className="text-hs-text mb-12">Questions?</h2>
 

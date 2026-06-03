@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/ui/FadeIn"
 
 export function PhilosophyV2Section() {
   return (
-    <section id="aboutchan" className="bg-hs-bg overflow-hidden pb-16 md:pb-24">
+    <section id="aboutchan" className="bg-hs-bg overflow-hidden md:pb-24">
       <div className="grid md:grid-cols-2 min-h-[600px] md:min-h-[750px]">
 
         {/* Image — first in DOM: left on desktop, above text on mobile */}

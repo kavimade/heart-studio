@@ -7,14 +7,14 @@ export function ScheduleSection() {
           Book directly through the schedule below.
         </p>
 
-        {/* Vibefam embed — replace with actual embed code when provided */}
-        {/* VIBEFAM_EMBED */}
-        <div className="bg-hs-white/10 border border-hs-white/20 rounded-2xl p-10 md:p-14 text-center mb-10">
-          <p className="text-hs-white/60 text-sm uppercase tracking-widest mb-2">Schedule</p>
-          <p className="text-hs-white text-lg font-medium mb-1">Vibefam booking embed</p>
-          <p className="text-hs-white/50 text-sm">
-            Replace this block with the Vibefam iframe embed code.
-          </p>
+        <div className="mb-10 rounded-2xl overflow-hidden">
+          <iframe
+            src="https://bookings.vibefam.com/heartstudiodn/classes#widget"
+            width="100%"
+            height="700"
+            frameBorder="0"
+            title="Book a Yoga Class"
+          />
         </div>
 
         {/* Supporting copy */}

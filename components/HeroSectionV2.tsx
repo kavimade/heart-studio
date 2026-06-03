@@ -78,7 +78,7 @@ export function HeroSectionV2() {
           {...fadeUp(0.35)}
           style={{
             fontFamily:  "var(--font-cormorant-garamond), Georgia, serif",
-            fontSize:    "clamp(3rem, 9vw, 9rem)",
+            fontSize:    "clamp(2rem, 5.5vw, 5.5rem)",
             fontWeight:  600,
             color:       "#FAFAF7",
             letterSpacing: "0.03em",
@@ -87,7 +87,7 @@ export function HeroSectionV2() {
             textShadow:  "0 2px 40px rgba(0,0,0,0.25)",
           }}
         >
-          Heart Studio
+          Move Gently.<br className="md:hidden" /> Breathe Deeply.
         </motion.h2>
       </div>
 
@@ -105,7 +105,7 @@ export function HeroSectionV2() {
           className="text-hs-white/65 text-sm mb-6"
           style={{ textShadow: "0 1px 8px rgba(0,0,0,0.4)" }}
         >
-          All levels welcome.
+          A modern space embracing the traditional spirit of yoga.
         </motion.p>
         <motion.div {...fadeUp(0.9)} className="flex gap-3">
           <a

@@ -45,7 +45,7 @@ const CLASSES = [
 
 export function ClassesV2Section() {
   return (
-    <section id="classes" className="bg-hs-bg py-20 md:py-28">
+    <section id="classes" className="bg-hs-bg pb-10 md:py-28">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* 2-col header */}
@@ -134,14 +134,7 @@ export function ClassesV2Section() {
           All levels welcome. Not sure where to start?{" "}
           <span className="text-hs-text font-medium">Hatha or Yin</span> is a gentle entry point.
         </p>
-        <div className="flex justify-center mt-8">
-          <a
-            href="#schedule"
-            className="bg-hs-terracotta hover:bg-hs-terracotta-dark text-hs-white px-8 py-3 rounded-full font-medium text-sm transition-colors"
-          >
-            Book a Class →
-          </a>
-        </div>
+        <div className="mt-8" />
       </div>
     </section>
   )

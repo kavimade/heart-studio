@@ -49,7 +49,7 @@ export function SpaceV2Section() {
       <div className="grid md:grid-cols-2 min-h-[600px] md:min-h-[750px]">
 
         {/* Left — text, vertically centered */}
-        <FadeIn className="order-2 md:order-1 flex flex-col justify-center px-8 md:px-14 lg:px-20 pt-4 pb-16 md:py-28 bg-hs-bg">
+        <FadeIn className="md:order-1 flex flex-col justify-center px-8 md:px-14 lg:px-20 pt-12 pb-10 md:py-28 bg-hs-bg">
           <p className="text-hs-olive text-xs uppercase tracking-widest mb-4">Our Space</p>
           <h2 className="text-hs-text mb-6">
             Welcome to{" "}
@@ -98,8 +98,8 @@ export function SpaceV2Section() {
           </div>
         </FadeIn>
 
-        {/* Right — contained image slider with rounded corners */}
-        <div className="order-1 md:order-2 bg-hs-bg flex items-center justify-center px-6 md:px-10 py-10 md:py-16">
+        {/* Right — contained image slider with rounded corners (desktop only) */}
+        <div className="hidden md:flex md:order-2 bg-hs-bg items-center justify-center px-6 md:px-10 py-10 md:py-16">
           <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden group shadow-sm">
             {SPACE_SLIDES.map((s, i) => (
               <div
