@@ -61,16 +61,13 @@ export function Navbar() {
             href="#home"
             className="flex items-center gap-2.5 z-10"
           >
-            <div className="relative overflow-hidden rounded-full shrink-0" style={{ width: 42, height: 42 }}>
-              <Image
-                src="/images/heart-studio-logo.webp"
-                alt="Heart Studio logo"
-                fill
-                className="object-cover"
-                style={{ objectPosition: "50% 28%" }}
-                sizes="42px"
-              />
-            </div>
+            <Image
+              src="/images/heart-studio-yoga-classes-danang-logo-navbar.webp"
+              alt="Heart Studio logo"
+              width={646}
+              height={715}
+              className="h-10 w-auto shrink-0"
+            />
             <span className={`font-display text-xl font-medium tracking-tight transition-colors ${
               scrolled && !mobileOpen ? "text-hs-text" : "text-hs-white"
             }`}>
@@ -157,16 +154,13 @@ export function Navbar() {
             {/* Top bar — mirrors nav height */}
             <div className="flex items-center justify-between px-6 py-4">
               <a href="#home" onClick={close} className="flex items-center gap-2.5">
-                <div className="relative overflow-hidden rounded-full shrink-0" style={{ width: 42, height: 42 }}>
-                  <Image
-                    src="/images/heart-studio-logo.webp"
-                    alt="Heart Studio logo"
-                    fill
-                    className="object-cover"
-                    style={{ objectPosition: "50% 28%" }}
-                    sizes="42px"
-                  />
-                </div>
+                <Image
+                  src="/images/heart-studio-yoga-classes-danang-logo-navbar.webp"
+                  alt="Heart Studio logo"
+                  width={646}
+                  height={715}
+                  className="h-10 w-auto shrink-0"
+                />
                 <span className="font-display text-xl font-medium text-hs-white tracking-tight">
                   Heart Studio
                 </span>

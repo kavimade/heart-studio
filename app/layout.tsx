@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
+import Script from "next/script"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/images/space-01.webp`,
+        url: `${SITE_URL}/images/heart-studio-yoga-danang-hero-1.webp`,
         width: 1200,
         height: 800,
         alt: "Heart Studio yoga space — Da Nang, Vietnam",
@@ -69,7 +70,7 @@ export const metadata: Metadata = {
     title: "Yoga Classes in Da Nang | Heart Studio by Chan",
     description:
       "Yoga classes in Da Nang for all levels — Hatha, Vinyasa, Yin, and more. Book a class at Heart Studio with Chan.",
-    images: [`${SITE_URL}/images/space-01.webp`],
+    images: [`${SITE_URL}/images/heart-studio-yoga-danang-hero-1.webp`],
   },
 }
 
@@ -83,7 +84,7 @@ const schema = {
       "description":
         "A small, intentional yoga studio in Da Nang, Vietnam. Hatha, Vinyasa, Yin, and functional movement classes taught by Chan. All levels welcome. Classes in English and Vietnamese.",
       "url": SITE_URL,
-      "image": `${SITE_URL}/images/space-01.webp`,
+      "image": `${SITE_URL}/images/heart-studio-yoga-danang-hero-1.webp`,
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "36 Nai Nam 8",
@@ -252,6 +253,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body className="min-h-screen antialiased" suppressHydrationWarning>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PJ5BNN9D"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        <Script
+          id="gtm"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PJ5BNN9D');`,
+          }}
+        />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-hs-white focus:text-hs-text focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:text-sm"

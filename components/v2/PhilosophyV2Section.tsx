@@ -11,7 +11,7 @@ export function PhilosophyV2Section() {
         <div className="bg-hs-bg flex items-center justify-center px-6 md:px-10 py-10 md:py-16">
           <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-sm">
             <Image
-              src="/images/chan-studio-owner.webp"
+              src="/images/heart-studio-yoga-danang-chan-owner.webp"
               alt="Chan — yoga teacher and founder of Heart Studio, Da Nang"
               fill
               className="object-cover object-top"

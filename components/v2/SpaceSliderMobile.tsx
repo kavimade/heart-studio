@@ -6,11 +6,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useReducedMotion } from "framer-motion"
 
 const SPACE_SLIDES = [
-  { src: "/images/space-01.webp", alt: "Heart Studio — yoga classes in Da Nang, Vietnam" },
-  { src: "/images/space-02.webp", alt: "Heart Studio yoga class space — Da Nang, Vietnam" },
-  { src: "/images/space-03.webp", alt: "Heart Studio yoga studio atmosphere — Da Nang" },
-  { src: "/images/space-04.webp", alt: "Heart Studio yoga studio — Da Nang, Vietnam" },
-  { src: "/images/space-05.webp", alt: "Heart Studio light and space — yoga classes Da Nang" },
+  { src: "/images/heart-studio-yoga-danang-welcome-1.webp", alt: "Heart Studio — yoga classes in Da Nang, Vietnam" },
+  { src: "/images/heart-studio-yoga-danang-welcome-2.webp", alt: "Heart Studio yoga class space — Da Nang, Vietnam" },
+  { src: "/images/heart-studio-yoga-danang-welcome-3.webp", alt: "Heart Studio yoga studio atmosphere — Da Nang" },
+  { src: "/images/heart-studio-yoga-danang-welcome-4.webp", alt: "Heart Studio yoga studio — Da Nang, Vietnam" },
 ]
 
 export function SpaceSliderMobile() {

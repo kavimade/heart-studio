@@ -5,11 +5,11 @@ import Image from "next/image"
 import { motion, useReducedMotion } from "framer-motion"
 
 const SLIDES = [
-  { src: "/images/space-01.webp", alt: "Heart Studio — yoga classes in Da Nang, Vietnam" },
-  { src: "/images/space-02.webp", alt: "Heart Studio yoga class space — Da Nang, Vietnam" },
-  { src: "/images/space-03.webp", alt: "Heart Studio yoga studio atmosphere — Da Nang" },
-  { src: "/images/space-04.webp", alt: "Heart Studio yoga studio — Da Nang, Vietnam" },
-  { src: "/images/space-05.webp", alt: "Heart Studio light and space — yoga classes Da Nang" },
+  { src: "/images/heart-studio-yoga-danang-hero-1.webp", alt: "Heart Studio — yoga classes in Da Nang, Vietnam" },
+  { src: "/images/heart-studio-yoga-danang-hero-2.webp", alt: "Heart Studio yoga class space — Da Nang, Vietnam" },
+  { src: "/images/heart-studio-yoga-danang-hero-3.webp", alt: "Heart Studio yoga studio atmosphere — Da Nang" },
+  { src: "/images/heart-studio-yoga-danang-hero-4.webp", alt: "Heart Studio yoga studio — Da Nang, Vietnam" },
+  { src: "/images/heart-studio-yoga-danang-hero-5.webp", alt: "Heart Studio light and space — yoga classes Da Nang" },
 ]
 
 const ease = [0.25, 0.1, 0.25, 1] as [number, number, number, number]
