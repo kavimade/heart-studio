@@ -22,9 +22,14 @@ export function InstagramV2Section() {
 
         {/* Header */}
         <div className="px-6 md:px-12 mb-10">
-          <p className="text-hs-olive text-xs uppercase tracking-widest mb-3">
+          <a
+            href="https://www.instagram.com/heartstudio.dn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-hs-olive text-xs uppercase tracking-widest mb-3 hover:opacity-70 transition-opacity inline-block"
+          >
             @heartstudio.dn
-          </p>
+          </a>
           <h2 className="text-hs-text">Connect with us</h2>
         </div>
 

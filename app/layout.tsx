@@ -205,7 +205,7 @@ const schema = {
           "name": "How do I book?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Through the schedule on the website or the Vibefam app. First-time visitors are also welcome to message on Instagram at @heartstudio.dn.",
+            "text": "Through the schedule on the website or the Vibefam app. First-time visitors are also welcome to message us directly.",
           },
         },
         {
@@ -221,7 +221,7 @@ const schema = {
           "name": "Do you offer private sessions or workshops?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Chan offers workshops periodically and is available for private sessions. Send a message on Instagram at @heartstudio.dn to arrange.",
+            "text": "Yes. Chan offers workshops periodically and is available for private sessions. Send us a message to arrange.",
           },
         },
         {
@@ -237,7 +237,7 @@ const schema = {
           "name": "Can I rent the studio space?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The studio is available for workshops, events, and content creation. It's a beautiful, calm space — ideal for wellness teachers, photographers, and creators. Send a message on Instagram at @heartstudio.dn to check availability.",
+            "text": "Yes. The studio is available for workshops, events, and content creation. It's a beautiful, calm space — ideal for wellness teachers, photographers, and creators. Send us a message to check availability.",
           },
         },
       ],

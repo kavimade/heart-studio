@@ -47,7 +47,7 @@ function KaviBadgeInline() {
       }}>
         <span style={{ fontSize: 10, fontWeight: 700, color: "#fff", lineHeight: 1 }}>K</span>
       </div>
-      <span style={{ fontSize: "0.88rem", fontWeight: 700, color: "#0f1729", letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>
+      <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#0f1729", letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>
         Made by Kavi
       </span>
     </a>
@@ -135,7 +135,7 @@ function KaviBadgeFloating() {
           <span style={{ fontSize: 10, fontWeight: 700, color: "#fff", lineHeight: 1 }}>K</span>
         </div>
 
-        <span style={{ fontSize: "0.88rem", fontWeight: 700, color: "#0f1729", letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>
+        <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#0f1729", letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>
           Made by Kavi
         </span>
 

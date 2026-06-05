@@ -25,7 +25,7 @@ const CLASSES = [
     label:       "Restorative Practice",
     name:        "Yin",
     description: "Long-held postures that release deep tension, calm the nervous system, and return you to stillness. For an increasingly restless world.",
-    bg:          "#C9BFB0",
+    bg:          "#CDC8B3",
     text:        "#3D3830",
     muted:       "#6B6358",
     wm:          "rgba(61,56,48,0.055)",

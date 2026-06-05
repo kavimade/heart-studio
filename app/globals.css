@@ -78,6 +78,17 @@ h6 {
   font-weight: 500;
 }
 
+/* ── Footer tagline — visually small h2 for SEO without visual dominance ── */
+
+.footer-tagline {
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.65rem, 1.1vw, 0.8rem);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
 /* ── Hero tagline — overrides h1 scale for the small subtitle ── */
 
 .hero-tagline {

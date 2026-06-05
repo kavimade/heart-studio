@@ -27,7 +27,7 @@ const FAQS = [
   },
   {
     q: "How do I book?",
-    a: "Through the schedule above or the Vibefam app. First-time visitors are also welcome to just message us on Instagram.",
+    a: "Through the schedule above or the Vibefam app. First-time visitors are also welcome to message us directly.",
   },
   {
     q: "What is your cancellation policy?",
@@ -35,7 +35,7 @@ const FAQS = [
   },
   {
     q: "Do you offer private sessions or workshops?",
-    a: "Yes. Chan offers workshops periodically and is available for private sessions. Send us a message on Instagram to arrange.",
+    a: "Yes. Chan offers workshops periodically and is available for private sessions. Send us a message to arrange.",
   },
   {
     q: "Do you teach in English and Vietnamese?",
@@ -43,7 +43,7 @@ const FAQS = [
   },
   {
     q: "Can I rent the studio space?",
-    a: "Yes. The studio is available for workshops, events, and content creation. It's a beautiful, calm space — ideal for wellness teachers, photographers, and creators. Send us a message on Instagram to check availability.",
+    a: "Yes. The studio is available for workshops, events, and content creation. It's a beautiful, calm space — ideal for wellness teachers, photographers, and creators. Send us a message to check availability.",
   },
 ]
 

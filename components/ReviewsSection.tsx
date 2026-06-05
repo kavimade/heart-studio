@@ -28,20 +28,20 @@ function Stars() {
 
 const REVIEWS = [
   {
-    name: "Thanh",
-    text: "One of the most aesthetic and cozy yoga studios in Da Nang. Clean space, great ventilation, calming music, and a very mindful teaching style. You can really feel the intention behind everything here. ❤️",
-  },
-  {
-    name: "Cierra",
-    text: "What an incredible space! The instructor is obviously incredibly knowledgeable and sweet. Simply gorgeous — they have everything you could need for your session. This is the best spot in Da Nang. A must if you're into yoga.",
-  },
-  {
     name: "Thien",
     text: "I've tried a few yoga studios in Da Nang and Heart honestly feels the most welcoming. The space is peaceful, airy and beautifully designed. The teachers pay attention to details and create a very grounding experience. Highly recommend if you're looking for yoga and wellness in Da Nang.",
   },
   {
     name: "Thao",
     text: "A hidden gem in Da Nang for anyone looking for mindful movement and healing practices. The yoga classes are accessible but still very deep. I felt comfortable from the moment I walked in. If you're looking for a yoga and wellness studio in Da Nang, Heart is worth visiting.",
+  },
+  {
+    name: "Thanh",
+    text: "One of the most aesthetic and cozy yoga studios in Da Nang. Clean space, great ventilation, calming music, and a very mindful teaching style. You can really feel the intention behind everything here. ❤️",
+  },
+  {
+    name: "Cierra",
+    text: "What an incredible space! The instructor is obviously incredibly knowledgeable and sweet. Simply gorgeous — they have everything you could need for your session. This is the best spot in Da Nang. A must if you're into yoga.",
   },
   {
     name: "Phan",
