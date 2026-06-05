@@ -74,21 +74,22 @@ export function HeroSectionV2() {
 
       {/* HEART STUDIO — big centered wordmark */}
       <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
-        <motion.h2
-          {...fadeUp(0.35)}
-          style={{
-            fontFamily:  "var(--font-cormorant-garamond), Georgia, serif",
-            fontSize:    "clamp(2rem, 5.5vw, 5.5rem)",
-            fontWeight:  600,
-            color:       "#FAFAF7",
-            letterSpacing: "0.03em",
-            lineHeight:  1,
-            textAlign:   "center",
-            textShadow:  "0 2px 40px rgba(0,0,0,0.25)",
-          }}
-        >
-          Move Gently.<br className="md:hidden" /> Breathe Deeply.
-        </motion.h2>
+        <div className="-translate-y-8 md:translate-y-0">
+          <motion.h2
+            {...fadeUp(0.35)}
+            className="hero-wordmark"
+            style={{
+              fontFamily:  "var(--font-cormorant-garamond), Georgia, serif",
+              fontWeight:  600,
+              color:       "#FAFAF7",
+              letterSpacing: "0.03em",
+              lineHeight:  1,
+              textAlign:   "center",
+            }}
+          >
+            Move Gently.<br className="md:hidden" /> Breathe Deeply.
+          </motion.h2>
+        </div>
       </div>
 
       {/* Bottom left — tagline + CTAs */}

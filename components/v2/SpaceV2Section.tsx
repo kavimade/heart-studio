@@ -15,6 +15,11 @@ const SPACE_SLIDES = [
 
 const ACCORDION = [
   {
+    title: "Yoga Classes and Workshops",
+    body: "We offer well-rounded daily yoga classes rooted in the spirit of yoga. Join us for a class, an event, or a workshop — all levels welcome.",
+    link: { label: "Yoga classes →", href: "#classes" },
+  },
+  {
     title: "What to bring",
     body: "Comfortable clothing that lets you move freely. Mats, blocks, and bolsters are all provided — you're welcome to bring your own mat if you prefer.",
   },
@@ -22,10 +27,6 @@ const ACCORDION = [
     title: "Location",
     body: "36 Nai Nam 8, Hai Chau, Da Nang.",
     link: { label: "Get Directions →", href: "https://maps.app.goo.gl/262E4hjNeNseDdKGA" },
-  },
-  {
-    title: "Cancellation",
-    body: "Free cancellation up to 3 hours before class. Late cancellations or no-shows may be counted against your package.",
   },
 ]
 
@@ -79,12 +80,11 @@ export function SpaceV2Section() {
                     {item.body}
                     {item.link && (
                       <>
-                        {" "}
+                        <br />
                         <a
                           href={item.link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-hs-olive underline underline-offset-4 hover:text-hs-olive-dark transition-colors"
+                          {...(item.link.href.startsWith("#") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                          className="text-hs-olive underline underline-offset-4 hover:text-hs-olive-dark transition-colors mt-1 inline-block"
                         >
                           {item.link.label}
                         </a>

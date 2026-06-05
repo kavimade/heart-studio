@@ -27,7 +27,18 @@ const FAQS = [
   },
   {
     q: "How do I book?",
-    a: "Through the schedule above or the Vibefam app. First-time visitors are also welcome to message us directly.",
+    a: (
+      <>
+        Through the schedule above or the Vibefam app. First-time visitors are also welcome to message us directly.
+        <br />
+        <a
+          href="#schedule"
+          className="mt-3 inline-flex items-center border border-hs-text text-hs-text px-5 py-2 rounded-full text-xs hover:bg-hs-text hover:text-hs-white transition-colors"
+        >
+          Book a yoga class
+        </a>
+      </>
+    ),
   },
   {
     q: "What is your cancellation policy?",

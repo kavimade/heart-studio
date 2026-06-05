@@ -34,7 +34,7 @@ const dmSans = localFont({
   ],
 })
 
-const SITE_URL = "https://heart-studio.vercel.app"
+const SITE_URL = "https://heartstudiodn.com"
 
 export const metadata: Metadata = {
   title: "Yoga Classes in Da Nang | Heart Studio by Chan",
