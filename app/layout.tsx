@@ -56,21 +56,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     alternateLocale: ["vi_VN"],
     type: "website",
-    images: [
-      {
-        url: `${SITE_URL}/images/heart-studio-yoga-danang-hero-1.webp`,
-        width: 1200,
-        height: 800,
-        alt: "Heart Studio yoga space — Da Nang, Vietnam",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Yoga Classes in Da Nang | Heart Studio by Chan",
     description:
       "Yoga classes in Da Nang for all levels — Hatha, Vinyasa, Yin, and more. Book a class at Heart Studio with Chan.",
-    images: [`${SITE_URL}/images/heart-studio-yoga-danang-hero-1.webp`],
   },
 }
 
