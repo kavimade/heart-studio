@@ -1,8 +1,8 @@
 export function PackagesSection() {
   return (
-    <section id="packages" className="bg-hs-bg pt-20 pb-10 md:py-28">
+    <section id="pricing" className="bg-hs-bg pt-20 pb-10 md:py-28">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-hs-text mb-3">Packages.</h2>
+        <h2 className="text-hs-text mb-3">Pricing</h2>
         <p className="text-hs-text-muted text-base md:text-lg mb-10">
           Save with a class pack or membership — browse options below.
         </p>

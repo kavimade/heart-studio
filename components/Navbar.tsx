@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion"
 import { InstagramFAB } from "@/components/ui/InstagramFAB"
 
 const NAV_LINKS = [
-  { href: "#home",     label: "Home" },
   { href: "#classes",  label: "Classes" },
   { href: "#about",    label: "About" },
   { href: "#schedule", label: "Schedule" },
+  { href: "#pricing",  label: "Pricing" },
   { href: "#faq",      label: "FAQ" },
   { href: "#contact",  label: "Contact" },
 ]
