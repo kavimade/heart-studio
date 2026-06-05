@@ -8,8 +8,8 @@ export const contentType = "image/png"
 
 export default async function OgImage() {
   const [displayFont, sansFont] = await Promise.all([
-    readFile(path.join(process.cwd(), "public/fonts/cormorant-garamond-600.woff2")),
-    readFile(path.join(process.cwd(), "public/fonts/dm-sans-400.woff2")),
+    readFile(path.join(process.cwd(), "public/fonts/cormorant-garamond-600.ttf")),
+    readFile(path.join(process.cwd(), "public/fonts/dm-sans-400.ttf")),
   ])
 
   return new ImageResponse(
