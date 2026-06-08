@@ -40,7 +40,7 @@ export function SpaceV2Section() {
 
   useEffect(() => {
     if (reducedMotion) return
-    const id = setInterval(next, 5000)
+    const id = setInterval(next, 3000)
     return () => clearInterval(id)
   }, [next, reducedMotion])
 

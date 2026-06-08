@@ -21,7 +21,7 @@ export function SpaceSliderMobile() {
 
   useEffect(() => {
     if (reducedMotion) return
-    const id = setInterval(next, 5000)
+    const id = setInterval(next, 3000)
     return () => clearInterval(id)
   }, [next, reducedMotion])
 
@@ -47,14 +47,14 @@ export function SpaceSliderMobile() {
 
         <button
           onClick={prev}
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-hs-white/70 hover:bg-hs-white backdrop-blur-sm rounded-full w-9 h-9 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-hs-white/70 active:bg-hs-white backdrop-blur-sm rounded-full w-9 h-9 flex items-center justify-center transition-all"
           aria-label="Previous image"
         >
           <ChevronLeft size={16} className="text-hs-text" />
         </button>
         <button
           onClick={next}
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-hs-white/70 hover:bg-hs-white backdrop-blur-sm rounded-full w-9 h-9 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-hs-white/70 active:bg-hs-white backdrop-blur-sm rounded-full w-9 h-9 flex items-center justify-center transition-all"
           aria-label="Next image"
         >
           <ChevronRight size={16} className="text-hs-text" />
