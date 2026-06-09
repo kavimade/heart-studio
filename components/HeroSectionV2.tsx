@@ -77,7 +77,7 @@ export function HeroSectionV2() {
         <div className="-translate-y-8 md:translate-y-0">
           <motion.div
             {...fadeUp(0.35)}
-            className="hero-wordmark-svg flex flex-col items-center gap-3 md:flex-row md:gap-8"
+            className="hero-wordmark-svg flex flex-col items-center gap-2.5 md:flex-row md:gap-2.5"
             role="img"
             aria-label="Move Gently. Breathe Deeply."
           >

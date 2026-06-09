@@ -138,6 +138,38 @@ h6 {
   }
 }
 
+/* ── Blog article body ─────────────────────────────────── */
+
+.prose-hs p {
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: #3D3830;
+  margin-bottom: 1.6rem;
+}
+
+.prose-hs h2 {
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+}
+
+.prose-hs h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-hs blockquote {
+  border-left: 2px solid #6B7A50;
+  padding-left: 1.5rem;
+  margin: 2.25rem 0;
+  font-family: var(--font-cormorant-garamond), Georgia, serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #6B6358;
+}
+
 /* ── Scrollbar utilities ───────────────────────────────── */
 
 .scrollbar-hide {

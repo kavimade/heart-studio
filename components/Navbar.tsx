@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { InstagramFAB } from "@/components/ui/InstagramFAB"
 
-const NAV_LINKS = [
+const NAV_LINKS: { href: string; label: string; page?: boolean }[] = [
   { href: "#classes",  label: "Classes" },
   { href: "#about",    label: "About" },
   { href: "#schedule", label: "Schedule" },
@@ -56,7 +56,7 @@ function LogoText({ style }: { style?: React.CSSProperties }) {
   )
 }
 
-export function Navbar() {
+export function Navbar({ subpage = false }: { subpage?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled,   setScrolled]   = useState(false)
 
@@ -92,7 +92,7 @@ export function Navbar() {
           {/* Left — wordmark */}
           <motion.a
             {...fromTop(0.2)}
-            href="#home"
+            href={subpage ? "/" : "#home"}
             className="flex items-center gap-2.5 z-10"
             style={{ color: logoColor, transition: "color 0.3s ease" }}
           >
@@ -105,10 +105,10 @@ export function Navbar() {
             {...fromTop(0.3)}
             className="hidden md:flex items-center gap-7 absolute left-1/2 -translate-x-1/2"
           >
-            {NAV_LINKS.map(({ href, label }) => (
+            {NAV_LINKS.map(({ href, label, page }) => (
               <a
                 key={href}
-                href={href}
+                href={page ? href : subpage ? `/${href}` : href}
                 className={`text-sm tracking-wide transition-colors ${
                   scrolled
                     ? "text-hs-text hover:text-hs-olive"
@@ -124,7 +124,7 @@ export function Navbar() {
           <div className="flex items-center gap-3 z-10">
             <motion.a
               {...fromTop(0.45)}
-              href="#schedule"
+              href={subpage ? "/#schedule" : "#schedule"}
               className="hidden md:inline-flex bg-hs-terracotta hover:bg-hs-terracotta-dark text-hs-white text-sm px-5 py-2.5 rounded-full transition-colors font-medium"
             >
               Book a Class
@@ -179,7 +179,7 @@ export function Navbar() {
             {/* Top bar — mirrors nav height */}
             <div className="flex items-center justify-between px-6 py-4">
               <a
-                href="#home"
+                href={subpage ? "/" : "#home"}
                 onClick={close}
                 className="flex items-center gap-2.5"
                 style={{ color: "#cdc8b3" }}
@@ -191,10 +191,10 @@ export function Navbar() {
 
             {/* Nav links — large serif, vertically centered */}
             <div className="flex-1 flex flex-col justify-center px-8 md:px-12">
-              {NAV_LINKS.map(({ href, label }, i) => (
+              {NAV_LINKS.map(({ href, label, page }, i) => (
                 <motion.a
                   key={href}
-                  href={href}
+                  href={page ? href : subpage ? `/${href}` : href}
                   onClick={close}
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -221,7 +221,7 @@ export function Navbar() {
               className="px-8 pb-12 flex items-center justify-between"
             >
               <a
-                href="#schedule"
+                href={subpage ? "/#schedule" : "#schedule"}
                 onClick={close}
                 className="bg-hs-terracotta hover:bg-hs-terracotta-dark text-hs-white px-7 py-3.5 rounded-full text-sm font-medium transition-colors"
               >
