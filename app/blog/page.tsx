@@ -1,58 +1,46 @@
+import Image from "next/image"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
-import { BlogCard } from "@/components/blog/BlogCard"
-import { FadeIn } from "@/components/ui/FadeIn"
+import { BlogIndex } from "@/components/blog/BlogIndex"
 import { getAllPosts } from "@/lib/blog"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Journal — Heart Studio",
+  title: "Blog — Heart Studio",
   description:
     "Reflections on yoga, wellbeing, and the practice of living with awareness. By Chan at Heart Studio, Da Nang.",
 }
 
-export default function BlogPage() {
-  const posts = getAllPosts()
+export const revalidate = 60
+
+export default async function BlogPage() {
+  const posts = await getAllPosts()
 
   return (
     <>
       <Navbar subpage />
       <main id="main-content">
-        {/* Page header */}
-        <section className="bg-hs-bg pt-32 pb-12 md:pt-44 md:pb-16">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <FadeIn>
-              <p className="text-hs-olive text-xs font-medium tracking-widest uppercase mb-5">
-                Journal
-              </p>
-              <div className="grid md:grid-cols-[5fr_7fr] gap-8 md:gap-16 items-end">
-                <h1 className="text-hs-text">
-                  Reflections on Practice&nbsp;&amp; Life
-                </h1>
-                <p className="text-hs-text-muted text-base leading-relaxed pb-1">
-                  Thoughts on yoga, wellbeing, and the quiet wisdom that emerges
-                  when we make space to notice.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-        </section>
-
-        {/* Divider */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="h-px bg-hs-border/70" />
+        {/* Hero image */}
+        <div className="relative h-[44vh] md:h-[53vh] w-full overflow-hidden">
+          <Image
+            src="/images/heart-studio-yoga-classes-danang-blog-hero.webp"
+            alt="Heart Studio — Blog"
+            fill
+            priority
+            loading="eager"
+            className="object-cover object-top md:[object-position:center_-200px]"
+            sizes="100vw"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(61,56,48,0.1) 0%, rgba(61,56,48,0.55) 100%)",
+            }}
+          />
         </div>
 
-        {/* Post grid */}
-        <section className="bg-hs-bg py-12 md:py-20">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {posts.map((post, i) => (
-                <BlogCard key={post.slug} post={post} index={i} />
-              ))}
-            </div>
-          </div>
-        </section>
+        <BlogIndex posts={posts} />
       </main>
       <Footer />
     </>

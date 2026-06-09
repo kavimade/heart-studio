@@ -11,6 +11,7 @@ const NAV_LINKS: { href: string; label: string; page?: boolean }[] = [
   { href: "#pricing",  label: "Pricing" },
   { href: "#faq",      label: "FAQ" },
   { href: "#contact",  label: "Contact" },
+  { href: "/blog",     label: "Blog", page: true },
 ]
 
 const ease    = [0.25, 0.1, 0.25, 1] as [number, number, number, number]
@@ -202,7 +203,7 @@ export function Navbar({ subpage = false }: { subpage?: boolean }) {
                   className="text-hs-white/90 hover:text-hs-white border-b border-hs-white/10 py-4 transition-colors"
                   style={{
                     fontFamily:  "var(--font-cormorant-garamond), Georgia, serif",
-                    fontSize:    "clamp(2.2rem, 9vw, 3rem)",
+                    fontSize:    "clamp(1.62rem, 6.66vw, 2.21rem)",
                     fontWeight:  500,
                     lineHeight:  1.1,
                     letterSpacing: "-0.01em",

@@ -138,11 +138,31 @@ h6 {
   }
 }
 
+/* ── Blog sidebar heading — compact serif for narrow column */
+
+.blog-sidebar-heading {
+  font-family: var(--font-cormorant-garamond), Georgia, serif;
+  font-size: clamp(2.9rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+/* ── Blog single post title ───────────────────────────── */
+
+.blog-post-title {
+  font-family: var(--font-cormorant-garamond), Georgia, serif;
+  font-size: clamp(2.9rem, 6vw, 3.8rem);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
 /* ── Blog article body ─────────────────────────────────── */
 
 .prose-hs p {
   font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  font-size: 1.0625rem;
+  font-size: clamp(0.9rem, 2.2vw, 1.0625rem);
   line-height: 1.85;
   color: #3D3830;
   margin-bottom: 1.6rem;

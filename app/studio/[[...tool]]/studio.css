@@ -1,0 +1,18 @@
+/* Heart Studio brand overrides for Sanity Studio */
+/* Targets @sanity/ui CSS custom properties */
+
+:root {
+  --card-fg-color:    #3D3830 !important;
+  --card-bg-color:    #FAFAF7 !important;
+}
+
+/* Primary / focus blue → olive */
+[data-ui="Button"][data-tone="primary"],
+[data-ui="Button"][data-tone="default"] {
+  --card-bg-color: #6B7A50 !important;
+}
+
+/* Swap the Sanity blue accent to olive throughout */
+[data-sanity-studio] {
+  --focus-ring-box-shadow: 0 0 0 1px #6B7A50 !important;
+}

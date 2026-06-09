@@ -1,15 +1,19 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
+import { PortableText } from "@portabletext/react"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { FadeIn } from "@/components/ui/FadeIn"
-import { getPost, getAllPosts } from "@/lib/blog"
-import type { PostBlock } from "@/lib/blog"
+import { getPost, getAllSlugs, calcReadTime, calcExcerpt } from "@/lib/blog"
+import type { PostBody } from "@/lib/blog"
 import type { Metadata } from "next"
 
-export function generateStaticParams() {
-  return getAllPosts().map((p) => ({ slug: p.slug }))
+export const revalidate = 60
+
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs()
+  return slugs.map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({
@@ -18,20 +22,12 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const post = getPost(slug)
+  const post = await getPost(slug)
   if (!post) return {}
   return {
-    title: `${post.title} — Heart Studio Journal`,
-    description: post.excerpt,
+    title: `${post.title} — Heart Studio Blog`,
+    description: calcExcerpt(post.body, post.excerpt),
   }
-}
-
-function formatDate(dateString: string) {
-  return new Date(dateString).toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  })
 }
 
 function BackArrow() {
@@ -48,22 +44,19 @@ function BackArrow() {
   )
 }
 
-function RichText({ blocks }: { blocks: PostBlock[] }) {
+const ptComponents = {
+  block: {
+    normal:     ({ children }: { children?: React.ReactNode }) => <p>{children}</p>,
+    h2:         ({ children }: { children?: React.ReactNode }) => <h2>{children}</h2>,
+    h3:         ({ children }: { children?: React.ReactNode }) => <h3>{children}</h3>,
+    blockquote: ({ children }: { children?: React.ReactNode }) => <blockquote>{children}</blockquote>,
+  },
+}
+
+function RichText({ body }: { body: PostBody }) {
   return (
     <div className="prose-hs">
-      {blocks.map((block, i) => {
-        if (block._type === "paragraph") {
-          return <p key={i}>{block.text}</p>
-        }
-        if (block._type === "heading") {
-          if (block.level === 3) return <h3 key={i}>{block.text}</h3>
-          return <h2 key={i}>{block.text}</h2>
-        }
-        if (block._type === "blockquote") {
-          return <blockquote key={i}>{block.text}</blockquote>
-        }
-        return null
-      })}
+      <PortableText value={body} components={ptComponents} />
     </div>
   )
 }
@@ -74,7 +67,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const post = getPost(slug)
+  const post = await getPost(slug)
   if (!post) notFound()
 
   return (
@@ -105,39 +98,24 @@ export default async function BlogPostPage({
         <div className="bg-hs-bg">
           <div className="max-w-2xl mx-auto px-6 md:px-8">
 
-            {/* Back link */}
-            <FadeIn>
-              <Link
-                href="/blog"
-                className="inline-flex items-center gap-2 text-hs-text-muted hover:text-hs-olive text-sm pt-10 pb-8 transition-colors"
-              >
-                <BackArrow />
-                Back to Journal
-              </Link>
-            </FadeIn>
-
-            {/* Category + meta */}
+            {/* Category */}
             <FadeIn delay={0.06}>
-              <div className="flex flex-wrap items-center gap-2 mb-5 text-xs text-hs-text-muted">
-                <span className="font-medium tracking-widest uppercase text-hs-olive">
-                  {post.category}
-                </span>
-                <span className="text-hs-border select-none">·</span>
-                <span>{formatDate(post.publishedAt)}</span>
-                <span className="text-hs-border select-none">·</span>
-                <span>{post.readTime} min read</span>
-              </div>
+              <span className="text-xs font-medium tracking-widest uppercase text-hs-olive pt-10 block">
+                {post.category}
+              </span>
             </FadeIn>
 
             {/* Title */}
             <FadeIn delay={0.1}>
-              <h1 className="text-hs-text">{post.title}</h1>
+              <h1 className="blog-post-title text-hs-text mt-4">{post.title}</h1>
             </FadeIn>
 
-            {/* Author */}
+            {/* Author + read time */}
             <FadeIn delay={0.14}>
-              <p className="text-hs-text-muted text-sm mt-3 mb-10">
+              <p className="text-hs-text-muted text-sm mt-5 mb-10">
                 By {post.author}
+                <span className="mx-2 text-hs-text-muted select-none">·</span>
+                {calcReadTime(post.body)} min read
               </p>
             </FadeIn>
 
@@ -145,7 +123,7 @@ export default async function BlogPostPage({
 
             {/* Body */}
             <FadeIn delay={0.18}>
-              <RichText blocks={post.body} />
+              <RichText body={post.body} />
             </FadeIn>
 
             {/* Bottom divider + back link */}
@@ -156,7 +134,7 @@ export default async function BlogPostPage({
               className="inline-flex items-center gap-2 text-hs-text-muted hover:text-hs-olive text-sm pb-16 transition-colors"
             >
               <BackArrow />
-              Back to Journal
+              Back to Blog
             </Link>
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, ReactNode } from "react"
+import { ReactNode } from "react"
 import { motion, useReducedMotion } from "framer-motion"
 
 interface FadeInProps {
@@ -11,12 +11,9 @@ interface FadeInProps {
 }
 
 export function FadeIn({ children, delay = 0, y = 22, className }: FadeInProps) {
-  const [mounted, setMounted] = useState(false)
   const reducedMotion = useReducedMotion()
 
-  useEffect(() => { setMounted(true) }, [])
-
-  if (!mounted || reducedMotion) {
+  if (reducedMotion) {
     return <div className={className}>{children}</div>
   }
 
