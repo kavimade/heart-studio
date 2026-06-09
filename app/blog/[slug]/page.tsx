@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { PortableText } from "@portabletext/react"
+import { ArrowLeft } from "lucide-react"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import { FadeIn } from "@/components/ui/FadeIn"
@@ -30,33 +31,10 @@ export async function generateMetadata({
   }
 }
 
-function BackArrow() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-      <path
-        d="M12 7H2M6 3L2 7l4 4"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
-const ptComponents = {
-  block: {
-    normal:     ({ children }: { children?: React.ReactNode }) => <p>{children}</p>,
-    h2:         ({ children }: { children?: React.ReactNode }) => <h2>{children}</h2>,
-    h3:         ({ children }: { children?: React.ReactNode }) => <h3>{children}</h3>,
-    blockquote: ({ children }: { children?: React.ReactNode }) => <blockquote>{children}</blockquote>,
-  },
-}
-
 function RichText({ body }: { body: PostBody }) {
   return (
     <div className="prose-hs">
-      <PortableText value={body} components={ptComponents} />
+      <PortableText value={body} />
     </div>
   )
 }
@@ -85,13 +63,7 @@ export default async function BlogPostPage({
             className="object-cover"
             sizes="100vw"
           />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to bottom, rgba(61,56,48,0.1) 0%, rgba(61,56,48,0.55) 100%)",
-            }}
-          />
+          <div className="hero-overlay" />
         </div>
 
         {/* Article body */}
@@ -133,7 +105,7 @@ export default async function BlogPostPage({
               href="/blog"
               className="inline-flex items-center gap-2 text-hs-text-muted hover:text-hs-olive text-sm pb-16 transition-colors"
             >
-              <BackArrow />
+              <ArrowLeft size={14} aria-hidden />
               Back to Blog
             </Link>
           </div>

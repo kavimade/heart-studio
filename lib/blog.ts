@@ -1,3 +1,5 @@
+import { cache } from "react"
+import { toPlainText } from "@portabletext/toolkit"
 import { getSanityAllPosts, getSanityPost, getSanitySlugs } from "@/sanity/lib/queries"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -14,12 +16,7 @@ export type Post = {
 }
 
 export function calcReadTime(body: PostBody): number {
-  const text = body
-    .filter((b) => b._type === "block")
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .map((b) => (b.children ?? []).map((c: any) => c.text ?? "").join(""))
-    .join(" ")
-  const words = text.trim().split(/\s+/).filter(Boolean).length
+  const words = toPlainText(body).trim().split(/\s+/).filter(Boolean).length
   return Math.max(1, Math.ceil(words / 200))
 }
 
@@ -27,8 +24,7 @@ export function calcExcerpt(body: PostBody, excerpt?: string): string {
   if (excerpt?.trim()) return excerpt
   const first = body.find((b) => b._type === "block" && b.style === "normal")
   if (!first) return ""
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const text = (first.children ?? []).map((c: any) => c.text ?? "").join("").trim()
+  const text = toPlainText([first]).trim()
   return text.length <= 160 ? text : text.slice(0, 157) + "…"
 }
 
@@ -124,32 +120,26 @@ const MOCK_POSTS: Post[] = [
 
 // ── Public API ────────────────────────────────────────────
 
-export async function getAllPosts(): Promise<Post[]> {
-  try {
-    const posts = await getSanityAllPosts()
-    if (posts && posts.length > 0) return posts
-  } catch {
-    // Sanity not configured or no posts yet — fall through to mock data
-  }
-  return [...MOCK_POSTS]
+function isSanityConfigured(): boolean {
+  return !!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
 }
 
-export async function getPost(slug: string): Promise<Post | undefined> {
-  try {
-    const post = await getSanityPost(slug)
-    if (post) return post
-  } catch {
-    // fall through to mock data
-  }
-  return MOCK_POSTS.find((p) => p.slug === slug)
+export async function getAllPosts(): Promise<Post[]> {
+  if (!isSanityConfigured()) return MOCK_POSTS
+  const posts = await getSanityAllPosts()
+  return posts?.length ? posts : MOCK_POSTS
 }
+
+// cache() deduplicates calls with the same slug within one request render tree,
+// avoiding the double Sanity fetch from generateMetadata + page component.
+export const getPost = cache(async (slug: string): Promise<Post | undefined> => {
+  if (!isSanityConfigured()) return MOCK_POSTS.find((p) => p.slug === slug)
+  const post = await getSanityPost(slug)
+  return post ?? MOCK_POSTS.find((p) => p.slug === slug)
+})
 
 export async function getAllSlugs(): Promise<string[]> {
-  try {
-    const sanitySligs = await getSanitySlugs()
-    if (sanitySligs && sanitySligs.length > 0) return sanitySligs.map((s) => s.slug)
-  } catch {
-    // fall through
-  }
-  return MOCK_POSTS.map((p) => p.slug)
+  if (!isSanityConfigured()) return MOCK_POSTS.map((p) => p.slug)
+  const slugs = await getSanitySlugs()
+  return slugs?.length ? slugs.map((s) => s.slug) : MOCK_POSTS.map((p) => p.slug)
 }

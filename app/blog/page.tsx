@@ -31,13 +31,7 @@ export default async function BlogPage() {
             className="object-cover object-top md:[object-position:center_-200px]"
             sizes="100vw"
           />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to bottom, rgba(61,56,48,0.1) 0%, rgba(61,56,48,0.55) 100%)",
-            }}
-          />
+          <div className="hero-overlay" />
         </div>
 
         <BlogIndex posts={posts} />
