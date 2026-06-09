@@ -11,7 +11,6 @@ const NAV_LINKS: { href: string; label: string; page?: boolean }[] = [
   { href: "#pricing",  label: "Pricing" },
   { href: "#faq",      label: "FAQ" },
   { href: "#contact",  label: "Contact" },
-  { href: "/blog",     label: "Blog", page: true },
 ]
 
 const ease    = [0.25, 0.1, 0.25, 1] as [number, number, number, number]
