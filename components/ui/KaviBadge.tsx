@@ -6,9 +6,9 @@ import { motion, AnimatePresence, useAnimation } from "framer-motion"
 interface KaviBadgeProps {
   /** Render inline (non-floating) with popover expanding upward */
   static?: boolean
-  /** Fill color for the Kavi icon. Defaults to #1b4332 */
+  /** Fill color for the Kavi icon. Defaults to #1C4332 */
   iconColor?: string
-  /** Fill color for the Kavi wordmark. Defaults to #1b4332 */
+  /** Fill color for the Kavi wordmark. Defaults to #1C4332 */
   wordmarkColor?: string
   /** If true, clicking links directly to kavimade.com instead of expanding the info card */
   direct?: boolean
@@ -18,7 +18,7 @@ interface KaviBadgeProps {
   pillBorderColor?: string
 }
 
-function KaviIcon({ color = "#1b4332", size = 20, controls }: { color?: string; size?: number; controls: ReturnType<typeof useAnimation> }) {
+function KaviIcon({ color = "#1C4332", size = 20, controls }: { color?: string; size?: number; controls: ReturnType<typeof useAnimation> }) {
   return (
     <motion.div
       animate={controls}
@@ -41,7 +41,7 @@ function KaviIcon({ color = "#1b4332", size = 20, controls }: { color?: string; 
   )
 }
 
-function KaviWordmark({ color = "#1b4332", height = 11 }: { color?: string; height?: number }) {
+function KaviWordmark({ color = "#1C4332", height = 11 }: { color?: string; height?: number }) {
   const width = Math.round(height * (609.55 / 233.83))
   return (
     <>
@@ -190,7 +190,7 @@ function KaviBadgeInline({ iconColor, wordmarkColor, direct = false, pillBg = "#
                 href="https://kavimade.com?utm_source=kavi-badge"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ fontSize: "0.81rem", fontWeight: 600, color: "#1b4332", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4 }}
+                style={{ fontSize: "0.81rem", fontWeight: 600, color: "#1C4332", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4 }}
               >
                 kavimade.com →
               </a>
@@ -339,7 +339,7 @@ function KaviBadgeFloating({ iconColor, wordmarkColor, direct = false, pillBg = 
             style={{
               fontSize:       "0.81rem",
               fontWeight:     600,
-              color:          "#1b4332",
+              color:          "#1C4332",
               textDecoration: "none",
               display:        "inline-flex",
               alignItems:     "center",
