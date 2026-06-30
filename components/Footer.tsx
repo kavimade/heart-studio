@@ -85,7 +85,7 @@ export function Footer() {
         </p>
 
         {/* Kavi badge — full opacity, anchored at bottom */}
-        <KaviBadge static />
+        <KaviBadge static refCode="heartstudio" />
 
       </div>
     </footer>

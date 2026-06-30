@@ -16,6 +16,8 @@ interface KaviBadgeProps {
   pillBg?: string
   /** Border color of the pill. Defaults to rgba(0,0,0,0.10) */
   pillBorderColor?: string
+  /** Affiliate ref code — appends ?ref=CODE for referral attribution */
+  refCode?: string
 }
 
 function KaviIcon({ color = "#1C4332", size = 20, controls }: { color?: string; size?: number; controls: ReturnType<typeof useAnimation> }) {
@@ -61,10 +63,13 @@ function KaviWordmark({ color = "#1C4332", height = 11 }: { color?: string; heig
   )
 }
 
-export function KaviBadge({ static: isStatic = false, iconColor, wordmarkColor, direct = false, pillBg, pillBorderColor }: KaviBadgeProps) {
+export function KaviBadge({ static: isStatic = false, iconColor, wordmarkColor, direct = false, pillBg, pillBorderColor, refCode }: KaviBadgeProps) {
+  const kaviUrl = refCode
+    ? `https://kavimade.com?ref=${refCode}&utm_source=kavi-badge`
+    : "https://kavimade.com?utm_source=kavi-badge"
   return isStatic
-    ? <KaviBadgeInline iconColor={iconColor} wordmarkColor={wordmarkColor} direct={direct} pillBg={pillBg} pillBorderColor={pillBorderColor} />
-    : <KaviBadgeFloating iconColor={iconColor} wordmarkColor={wordmarkColor} direct={direct} pillBg={pillBg} pillBorderColor={pillBorderColor} />
+    ? <KaviBadgeInline iconColor={iconColor} wordmarkColor={wordmarkColor} direct={direct} pillBg={pillBg} pillBorderColor={pillBorderColor} kaviUrl={kaviUrl} />
+    : <KaviBadgeFloating iconColor={iconColor} wordmarkColor={wordmarkColor} direct={direct} pillBg={pillBg} pillBorderColor={pillBorderColor} kaviUrl={kaviUrl} />
 }
 
 // ── Inline (footer) variant — plain pill link, no expand ────────────────────────────
@@ -83,7 +88,7 @@ const PILL_STYLE = {
   transition:  "opacity 0.15s ease",
 }
 
-function KaviBadgeInline({ iconColor, wordmarkColor, direct = false, pillBg = "#ffffff", pillBorderColor = "rgba(0,0,0,0.10)" }: { iconColor?: string; wordmarkColor?: string; direct?: boolean; pillBg?: string; pillBorderColor?: string }) {
+function KaviBadgeInline({ iconColor, wordmarkColor, direct = false, pillBg = "#ffffff", pillBorderColor = "rgba(0,0,0,0.10)", kaviUrl }: { iconColor?: string; wordmarkColor?: string; direct?: boolean; pillBg?: string; pillBorderColor?: string; kaviUrl: string }) {
   const [expanded,  setExpanded]  = useState(false)
   const [isClosing, setIsClosing] = useState(false)
   const ref      = useRef<HTMLDivElement>(null)
@@ -123,7 +128,7 @@ function KaviBadgeInline({ iconColor, wordmarkColor, direct = false, pillBg = "#
   if (direct) {
     return (
       <a
-        href="https://kavimade.com?utm_source=kavi-badge"
+        href={kaviUrl}
         target="_blank"
         rel="noopener noreferrer"
         style={{ ...pillStyle, textDecoration: "none" }}
@@ -185,7 +190,7 @@ function KaviBadgeInline({ iconColor, wordmarkColor, direct = false, pillBg = "#
                 Beautiful websites for wellness practitioners. $0 to build, $39/month. We handle everything.
               </p>
               <a
-                href="https://kavimade.com?utm_source=kavi-badge"
+                href={kaviUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ fontSize: "0.81rem", fontWeight: 600, color: "#1C4332", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 4 }}
@@ -202,7 +207,7 @@ function KaviBadgeInline({ iconColor, wordmarkColor, direct = false, pillBg = "#
 
 // ── Floating variant ──────────────────────────────────────────────────────────────
 
-function KaviBadgeFloating({ iconColor, wordmarkColor, direct = false, pillBg = "#ffffff", pillBorderColor = "rgba(0,0,0,0.10)" }: { iconColor?: string; wordmarkColor?: string; direct?: boolean; pillBg?: string; pillBorderColor?: string }) {
+function KaviBadgeFloating({ iconColor, wordmarkColor, direct = false, pillBg = "#ffffff", pillBorderColor = "rgba(0,0,0,0.10)", kaviUrl }: { iconColor?: string; wordmarkColor?: string; direct?: boolean; pillBg?: string; pillBorderColor?: string; kaviUrl: string }) {
   const [mounted,   setMounted]   = useState(false)
   const [expanded,  setExpanded]  = useState(false)
   const [isClosing, setIsClosing] = useState(false)
@@ -266,7 +271,7 @@ function KaviBadgeFloating({ iconColor, wordmarkColor, direct = false, pillBg = 
         width:      expanded ? 245 : undefined,
       }}
       onClick={() => {
-        if (direct) window.open("https://kavimade.com?utm_source=kavi-badge", "_blank", "noopener,noreferrer")
+        if (direct) window.open(kaviUrl, "_blank", "noopener,noreferrer")
         else if (!expanded && !isClosing) setExpanded(true)
       }}
       whileHover={expanded ? {} : { opacity: 0.85 }}
@@ -338,7 +343,7 @@ function KaviBadgeFloating({ iconColor, wordmarkColor, direct = false, pillBg = 
             Beautiful websites for wellness practitioners. $0 to build, $39/month. We handle everything.
           </p>
           <a
-            href="https://kavimade.com?utm_source=kavi-badge"
+            href={kaviUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
