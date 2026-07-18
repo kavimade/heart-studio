@@ -206,3 +206,14 @@ h6 {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Tailwind v4 preflight no longer sets cursor:pointer on buttons — restore it
+   for all enabled clickable controls (kavi-wide standard, see global CLAUDE.md). */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  input[type="submit"]:not(:disabled),
+  input[type="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
